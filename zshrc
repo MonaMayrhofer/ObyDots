@@ -17,3 +17,6 @@ source ~/.ozsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.ozsh/zsh-z/zsh-z.plugin.zsh
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
+
+# ======= ENABLE K ==========
+source ~/.ozsh/k/k.plugin.zsh

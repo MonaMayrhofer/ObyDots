@@ -4,3 +4,6 @@
 [submodule "ozsh/zsh-z"]
 	path = ozsh/zsh-z
 	url = git@github.com:agkozak/zsh-z.git
+[submodule "ozsh/k"]
+	path = ozsh/k
+	url = git@github.com:supercrabtree/k.git
