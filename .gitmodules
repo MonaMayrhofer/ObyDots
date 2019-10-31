@@ -1,0 +1,3 @@
+[submodule "ozsh/powerlevel10k"]
+	path = ozsh/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
