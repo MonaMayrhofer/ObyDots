@@ -1,3 +1,11 @@
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+
+# ======= ENABLE TMUX =========
+ZSH_TMUX_AUTOSTART=true
+source ~/.ozsh/oh-my-zsh/plugins/tmux/tmux.plugin.zsh
+
+
 # ======= ENABLE POWERLINE =======
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -16,13 +24,12 @@ source ~/.ozsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.ozsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ======= ENABLE Z ===========
-
 source ~/.ozsh/zsh-z/zsh-z.plugin.zsh
-autoload -U compinit && compinit
-zstyle ':completion:*' menu select
 
 # ======= ENABLE K ==========
 source ~/.ozsh/k/k.plugin.zsh
 
 # ======= ENABLE GIT ==========
 source ~/.ozsh/oh-my-zsh/plugins/git/git.plugin.zsh
+
+
