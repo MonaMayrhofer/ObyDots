@@ -7,3 +7,9 @@
 [submodule "ozsh/k"]
 	path = ozsh/k
 	url = git@github.com:supercrabtree/k.git
+[submodule "ozsh/zsh-syntax-highlighting"]
+	path = ozsh/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "ozsh/oh-my-zsh"]
+	path = ozsh/oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git

@@ -12,6 +12,9 @@ source ~/.ozsh/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# ======= ENABLE SYNTAX HIGHLIGHT =========
+source ~/.ozsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # ======= ENABLE Z ===========
 
 source ~/.ozsh/zsh-z/zsh-z.plugin.zsh
@@ -20,3 +23,6 @@ zstyle ':completion:*' menu select
 
 # ======= ENABLE K ==========
 source ~/.ozsh/k/k.plugin.zsh
+
+# ======= ENABLE GIT ==========
+source ~/.ozsh/oh-my-zsh/plugins/git/git.plugin.zsh
