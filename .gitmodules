@@ -13,3 +13,9 @@
 [submodule "ozsh/oh-my-zsh"]
 	path = ozsh/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "otmux/tmux-pain-control"]
+	path = otmux/tmux-pain-control
+	url = git@github.com:tmux-plugins/tmux-pain-control.git
+[submodule "otmux/tmux-yank"]
+	path = otmux/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank

@@ -36,3 +36,5 @@ crtolink ozsh .ozsh
 crtolink zshrc .zshrc
 crtolink p10k.zsh .p10k.zsh
 crtolink tmux.conf .tmux.conf
+
+crtolink otmux .otmux
