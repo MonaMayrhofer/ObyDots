@@ -19,3 +19,6 @@
 [submodule "otmux/tmux-yank"]
 	path = otmux/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
+[submodule "oasdf/asdf"]
+	path = oasdf/asdf
+	url = https://github.com/asdf-vm/asdf.git

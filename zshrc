@@ -2,7 +2,7 @@ autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
 # ======= ENABLE TMUX =========
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 source ~/.ozsh/oh-my-zsh/plugins/tmux/tmux.plugin.zsh
 
 
@@ -31,5 +31,9 @@ source ~/.ozsh/k/k.plugin.zsh
 
 # ======= ENABLE GIT ==========
 source ~/.ozsh/oh-my-zsh/plugins/git/git.plugin.zsh
+
+# ======= ENABLE ASDF ==========
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 
