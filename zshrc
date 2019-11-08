@@ -5,7 +5,13 @@ zstyle ':completion:*' menu select
 #ZSH_TMUX_AUTOSTART=true
 source ~/.ozsh/oh-my-zsh/plugins/tmux/tmux.plugin.zsh
 
-
+ENABLE_ANACONDA=false
+ANACONDA_PATH="/opt/Anaconda/anaconda3/bin"
+if [ -d $ANACONDA_PATH ]; then
+  ENABLE_ANACONDA=true
+else
+  echo "Anaconda is not installed under $ANACONDA_PATH conda will not be activated in your zsh"
+fi
 # ======= ENABLE POWERLINE =======
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -36,4 +42,20 @@ source ~/.ozsh/oh-my-zsh/plugins/git/git.plugin.zsh
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-
+if test ENABLE_ANACONDA; then
+# ======= ENABLE ANACONDA ========
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/Anaconda/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/Anaconda/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/Anaconda/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/Anaconda/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+fi
