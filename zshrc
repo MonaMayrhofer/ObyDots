@@ -1,6 +1,15 @@
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+# ======= ENABLE POWERLINE =======
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # ======= ENABLE TMUX =========
 #ZSH_TMUX_AUTOSTART=true
 source ~/.ozsh/oh-my-zsh/plugins/tmux/tmux.plugin.zsh
@@ -11,13 +20,6 @@ if [ -d $ANACONDA_PATH ]; then
   ENABLE_ANACONDA=true
 else
   echo "Anaconda is not installed under $ANACONDA_PATH conda will not be activated in your zsh"
-fi
-# ======= ENABLE POWERLINE =======
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Enable PowerLevel10k
