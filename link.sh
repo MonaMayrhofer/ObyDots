@@ -22,7 +22,7 @@ crtolink(){
   from=$scriptdir/$1
   to=$home/$2
   echo "$from -> $to"
-  if [ -e $to ]; then
+  if [ -e $to ] || [ -L $to ]; then
     bckuptrg=$bckupdir
     echo -e "${GRED}$to${CNONE} exists. Moving to $bckuptrg"
 
@@ -37,5 +37,7 @@ crtolink zshrc .zshrc
 crtolink p10k.zsh .p10k.zsh
 crtolink tmux.conf .tmux.conf
 crtolink oasdf/asdf .asdf
+crtolink vifmrc .config/vifm/vifmrc
+crtolink oranger .config/ranger
 
 crtolink otmux .otmux
