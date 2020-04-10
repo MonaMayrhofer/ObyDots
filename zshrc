@@ -9,6 +9,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export PATH="${PATH}:${HOME}/bin"
 
 # ======= ENABLE TMUX =========
 #ZSH_TMUX_AUTOSTART=true
@@ -39,6 +40,9 @@ source ~/.ozsh/k/k.plugin.zsh
 
 # ======= ENABLE GIT ==========
 source ~/.ozsh/oh-my-zsh/plugins/git/git.plugin.zsh
+
+# ======= ENABLE fzf =========
+source ~/.ozsh/oh-my-zsh/plugins/fzf/fzf.plugin.zsh
 
 # ======= ENABLE ASDF ==========
 . $HOME/.asdf/asdf.sh
