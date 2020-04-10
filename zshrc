@@ -65,3 +65,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 fi
+
+# ============= OWN COMMANDS =============
+alias deepwhich="readlink -f $(which $1)"
+alias ll="ls -la -h --color"
+
+export PATH=$PATH:~/bin
+
+# ======= ENABLE ASDF ==========
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
