@@ -34,6 +34,7 @@ crtolink(){
 
 crtolink ozsh .ozsh
 crtolink zshrc .zshrc
+crtolink xinitrc .xinitrc
 crtolink p10k.zsh .p10k.zsh
 crtolink tmux.conf .tmux.conf
 crtolink oasdf/asdf .asdf
