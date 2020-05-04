@@ -67,3 +67,10 @@ export PATH=$PATH:~/bin
 # ======= ENABLE ASDF ==========
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# ====== FIX NPM PATH ======
+# export PATH=$PATH:node_modules/.bin
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/obyoxar/.sdkman"
+[[ -s "/home/obyoxar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/obyoxar/.sdkman/bin/sdkman-init.sh"
