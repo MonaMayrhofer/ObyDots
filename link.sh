@@ -20,34 +20,52 @@ bckupdir=$scriptdir/backup/$backupdatestr
 
 crtolink(){
   move=false
+  link=true
   from=$scriptdir/$1
   to=$home/$2
-  printf "${CLRED}[$from -> $to]${CNONE} "
+  
+  prn_file=""
+  prn_status=""
+  prn_action=""
+
+  prn_file="[$from -> $to]"
+  prn_line_color="${CGRN}"
+
   if [ -L $to ]; then
     dest=$(readlink -f $to)
-    printf "${CRED}$to${CNONE} exists as a link to ${GRED}$dest${CNONE}." 
+    prn_status="${CRED}$to${CNONE} exists as a link to ${GRED}$dest${CNONE}." 
     if [ "$dest" = "$(readlink -f $from)" ]; then
-      printf " This is fine. Will be unchanged."
-      printf "\n"
-      return
+      prn_action=" This is fine. Will be unchanged."
+      link=false
     else
       move=true
     fi
+  else
+    if [ -f $to ] && [ ! -L $to ]; then
+      prn_status="${CRED}$to${CNONE} exists (file)."
+      move=true
+    elif [ -d $to ]; then
+      prn_status="${CRED}$to${CNONE} exists (directory)."
+      move=true
+    fi
   fi
-  if [ -f $to ] && [ ! -L $to ]; then
-    printf "${CRED}$to${CNONE} exists."
-    move=true
-  fi
+
 
   if [ "$move" = "true" ]; then
     bckuptrg=$bckupdir
-    printf "Moving to $bckuptrg"
+    prn_action="${prn_action}, Moving $to -> $bckuptrg"
+    prn_line_color="${CRED}"
 
     if [ ! -d $bckuptrg ]; then mkdir -p $bckuptrg; fi
     mv $to $bckuptrg
   fi
-  ln -s $from $to
-  printf "\n" 
+  if [ "$link" = "true" ]; then
+    ln -s $from $to
+    prn_line_color="${CNONE}"
+    prn_action="${prn_action}, Linking $from -> $to"
+  fi
+
+  printf "${prn_line_color}${prn_file}${CNONE}: ${prn_status}: ${prn_action}\n" 
 }
 
 mkcustomrc(){
@@ -59,6 +77,7 @@ mkcustomrc(){
   fi
 }
 
+printf "\n${CNONE}==========${CNONE}\n\n"
 crtolink ozsh .ozsh
 mkcustomrc .zshrc
 crtolink zshrc .zshrc
