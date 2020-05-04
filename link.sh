@@ -69,5 +69,6 @@ crtolink tmux.conf .tmux.conf
 crtolink oasdf/asdf .asdf
 crtolink vifmrc .config/vifm/vifmrc
 crtolink oranger .config/ranger
+crtolink oalacritty .config/alacritty
 
 crtolink otmux .otmux
