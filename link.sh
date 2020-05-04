@@ -3,6 +3,8 @@ ESC="\033["
 CRED="${ESC}0;31m"
 CGRN="${ESC}0;32m"
 CLRED="${ESC}1;31m"
+CUWHT="${ESC}4;37m"
+CBOLD="${ESC}1m"
 CNONE="${ESC}0m"
 
 scriptdir=$(dirname $(readlink -f $0))
@@ -33,39 +35,48 @@ crtolink(){
 
   if [ -L $to ]; then
     dest=$(readlink -f $to)
-    prn_status="${CRED}$to${CNONE} exists as a link to ${GRED}$dest${CNONE}." 
+    # prn_status="${CUWHT}$to${CNONE} exists as a link to ${GUWHT}$dest${CNONE}." 
     if [ "$dest" = "$(readlink -f $from)" ]; then
-      prn_action=" This is fine. Will be unchanged."
+      # prn_action=" This is fine. Will be unchanged."
+      prn_status="${CGRN}✓${CNONE} Link Exists${CNONE}"
       link=false
     else
       move=true
     fi
   else
     if [ -f $to ] && [ ! -L $to ]; then
-      prn_status="${CRED}$to${CNONE} exists (file)."
+      prn_status="${CUWHT}$to${CNONE} exists (file)."
       move=true
     elif [ -d $to ]; then
-      prn_status="${CRED}$to${CNONE} exists (directory)."
+      prn_status="${CUWHT}$to${CNONE} exists (directory)."
       move=true
+    else
+      prn_status="${CUWHT}$to${CNONE} does not exist."
     fi
   fi
 
 
+  success="true"
   if [ "$move" = "true" ]; then
     bckuptrg=$bckupdir
     prn_action="${prn_action}, Moving $to -> $bckuptrg"
     prn_line_color="${CRED}"
 
     if [ ! -d $bckuptrg ]; then mkdir -p $bckuptrg; fi
-    mv $to $bckuptrg
+    mv $to $bckuptrg || success="false"
   fi
   if [ "$link" = "true" ]; then
-    ln -s $from $to
+    ln -s $from $to || success="false"
     prn_line_color="${CNONE}"
     prn_action="${prn_action}, Linking $from -> $to"
   fi
 
-  printf "${prn_line_color}${prn_file}${CNONE}: ${prn_status}: ${prn_action}\n" 
+  if [ "$success" = "true" ]; then
+    success="${CBOLD}${CGRN}[✔]${CNONE}"
+  else
+    success="${CBOLD}${CRED}[✘]${CNONE}"
+  fi
+  printf "${success}${prn_line_color}${CBOLD}${prn_file}${CNONE}: ${prn_status} ${prn_action}\n" 
 }
 
 mkcustomrc(){
@@ -91,3 +102,5 @@ crtolink oranger .config/ranger
 crtolink oalacritty .config/alacritty
 
 crtolink otmux .otmux
+
+printf "\n ${CBOLD}Done!${CNONE} See above for results and errors."
