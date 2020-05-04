@@ -20,6 +20,8 @@ backupdatestr=$(date +%d_%m_%y_%H%M)
 
 bckupdir=$scriptdir/backup/$backupdatestr
 
+printf "Files that are moved to ${CUWHT}backup${CNONE} will be moved to ${CGRN}${bckupdir}${CNONE}\n"
+
 crtolink(){
   move=false
   link=true
@@ -59,7 +61,7 @@ crtolink(){
   success="true"
   if [ "$move" = "true" ]; then
     bckuptrg=$bckupdir
-    prn_action="${prn_action}, Moving $to -> $bckuptrg"
+    prn_action="${prn_action} Moving to backup."
     prn_line_color="${CRED}"
 
     if [ ! -d $bckuptrg ]; then mkdir -p $bckuptrg; fi
@@ -68,7 +70,7 @@ crtolink(){
   if [ "$link" = "true" ]; then
     ln -s $from $to || success="false"
     prn_line_color="${CNONE}"
-    prn_action="${prn_action}, Linking $from -> $to"
+    prn_action="${prn_action} Creating link."
   fi
 
   if [ "$success" = "true" ]; then
@@ -76,7 +78,7 @@ crtolink(){
   else
     success="${CBOLD}${CRED}[✘]${CNONE}"
   fi
-  printf "${success}${prn_line_color}${CBOLD}${prn_file}${CNONE}: ${prn_status} ${prn_action}\n" 
+  printf "${success}${prn_line_color}${CBOLD}${prn_file}${CNONE}: ${prn_status}${prn_action}\n" 
 }
 
 mkcustomrc(){
