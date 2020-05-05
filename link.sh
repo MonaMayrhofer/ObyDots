@@ -90,6 +90,14 @@ mkcustomrc(){
   fi
 }
 
+checkex() {
+  command=$1
+  message=$2
+  if [ ! $(which $command) ]; then
+    printf "[$> ${CBOLD}$command${CNONE}] doesn't exist. $message\n"
+  fi
+}
+
 printf "\n${CNONE}==========${CNONE}\n\n"
 crtolink ozsh .ozsh
 mkcustomrc .zshrc
@@ -105,4 +113,10 @@ crtolink oalacritty .config/alacritty
 
 crtolink otmux .otmux
 
-printf "\n ${CBOLD}Done!${CNONE} See above for results and errors."
+checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
+
+printf "\n${CNONE}==========${CNONE}\n"
+printf "Setting Dconf Gnome Keybinds\n\n"
+source ./dconf_write_gnome.sh
+
+printf "\n ${CBOLD}Done!${CNONE} See above for results and errors.\n"
