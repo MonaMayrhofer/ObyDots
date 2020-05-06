@@ -15,6 +15,9 @@ echo -e "Currently in ${CGRN}$(pwd)${CNONE}"
 echo -e "User: ${CGRN}$(whoami) ($(id -u))${CNONE}"
 home=$HOME
 echo -e "Home: ${CGRN}$home${CNONE}"
+obydotrcgenpath="${HOME}/.obydotrc_generated"
+echo -e "ObyDotRc_Generated: ${CGRN}${obydotrcgenpath}${CNONE}"
+
 
 backupdatestr=$(date +%d_%m_%y_%H%M)
 
@@ -119,4 +122,12 @@ printf "\n${CNONE}==========${CNONE}\n"
 printf "Setting Dconf Gnome Keybinds\n\n"
 source ./dconf_write_gnome.sh
 
-printf "\n ${CBOLD}Done!${CNONE} See above for results and errors.\n"
+printf "\n${CNONE}==========${CNONE}\n"
+printf "Generating RC-File in ${CUWHT}${obydotrcgenpath}${CNONE}\n"
+if [ -f ${obydotrcgenpath} ]; then
+  printf "Deleting old RC-File\n"
+  rm ${obydotrcgenpath}
+fi
+echo "OBYDOTBINDIR='${scriptdir}/obin'" >> ${obydotrcgenpath}
+
+cat ${obydotrcgenpath}

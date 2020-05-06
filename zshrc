@@ -1,6 +1,8 @@
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+source "${HOME}/.obydotrc_generated"
+
 # ======= ENABLE POWERLINE =======
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -9,7 +11,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH="${PATH}:${HOME}/bin"
+# The following variable will be automatically set by the link script, which inputs
+# the to the `obin` directory in the ObyDots directory.
+export PATH="${PATH}:${HOME}/bin:${OBYDOTBINDIR}"
 
 # ======= ENABLE TMUX =========
 #ZSH_TMUX_AUTOSTART=true
