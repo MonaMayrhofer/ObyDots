@@ -13,7 +13,7 @@ fi
 
 # The following variable will be automatically set by the link script, which inputs
 # the to the `obin` directory in the ObyDots directory.
-export PATH="${PATH}:${HOME}/bin:${OBYDOTBINDIR}"
+export PATH="${PATH}:${HOME}/bin:${OBYDOTBINDIR}:${HOME}/.local/bin"
 
 # ======= ENABLE TMUX =========
 #ZSH_TMUX_AUTOSTART=true
