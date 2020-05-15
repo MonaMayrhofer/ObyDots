@@ -86,3 +86,4 @@ export PATH=$PATH:~/bin
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/obyoxar/.sdkman"
 [[ -s "/home/obyoxar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/obyoxar/.sdkman/bin/sdkman-init.sh"
+
