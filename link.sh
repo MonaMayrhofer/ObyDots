@@ -116,7 +116,15 @@ crtolink oalacritty .config/alacritty
 
 crtolink otmux .otmux
 
+
+printf "\n${CNONE}==========${CNONE}\n\n"
 checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
+checkex tmux "Please install tmux 'sudo apt install tmux'"
+
+fc-list | grep "JetBrains Mono" > /dev/null
+if [ $? -ne 0 ]; then
+  echo "Please install JetBrains Mono from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
+fi
 
 printf "\n${CNONE}==========${CNONE}\n"
 printf "Setting Dconf Gnome Keybinds\n\n"

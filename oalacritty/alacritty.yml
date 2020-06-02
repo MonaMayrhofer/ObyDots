@@ -98,7 +98,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Hasklig
+    family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -172,11 +172,11 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night Bright)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#000000'
-  #  foreground: '#eaeaea'
+  primary:
+    background: '#2E2F2F'
+    # foreground: '#eaeaea'
 
     # Bright and dim foreground colors
     #
