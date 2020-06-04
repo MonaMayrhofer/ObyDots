@@ -101,6 +101,18 @@ checkex() {
   fi
 }
 
+checkfont(){
+  font=$1
+  message=$2
+  fc-list | grep "${font}" > /dev/null
+  printf "[Font '${CBOLD}$font${CNONE}'] "
+  if [ $? -ne 0 ]; then
+    printf "${CRED}$message${CNONE}\n" 
+  else
+    printf "${CGRN}Installed${CNONE}\n"
+  fi
+}
+
 printf "\n${CNONE}==========${CNONE}\n\n"
 crtolink ozsh .ozsh
 mkcustomrc .zshrc
@@ -121,10 +133,7 @@ printf "\n${CNONE}==========${CNONE}\n\n"
 checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
 checkex tmux "Please install tmux 'sudo apt install tmux'"
 
-fc-list | grep "JetBrains Mono" > /dev/null
-if [ $? -ne 0 ]; then
-  echo "Please install JetBrains Mono from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
-fi
+checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
 
 printf "\n${CNONE}==========${CNONE}\n"
 printf "Setting Dconf Gnome Keybinds\n\n"
