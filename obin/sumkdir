@@ -1,0 +1,5 @@
+#!/bin/bash
+
+user=$(id -u)
+group=$(id -g)
+sudo mkdir $1 && sudo chown $user $1 && sudo chgrp $group $1
