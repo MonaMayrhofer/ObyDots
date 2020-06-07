@@ -122,7 +122,10 @@ crtolink xinitrc .xinitrc
 crtolink p10k.zsh .p10k.zsh
 crtolink tmux.conf .tmux.conf
 crtolink oasdf/asdf .asdf
-crtolink vifmrc .config/vifm/vifmrc
+#crtolink vifmrc .config/vifm/vifmrc
+#crtolink ovim .vim
+#crtolink ovimrc .vimrc
+crtolink onvim .config/nvim
 crtolink oranger .config/ranger
 crtolink oalacritty .config/alacritty
 
@@ -134,6 +137,14 @@ checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
 checkex tmux "Please install tmux 'sudo apt install tmux'"
 
 checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
+
+
+printf "[${CBOLD}dein${CNONE}] "
+if [ -d $HOME/.cache/dein ]; then
+  printf "exists."
+else
+  printf "doesn't exist. Please install dein via https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh into ~/.cache/dein"
+fi  
 
 printf "\n${CNONE}==========${CNONE}\n"
 printf "Setting Dconf Gnome Keybinds\n\n"
