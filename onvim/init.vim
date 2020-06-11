@@ -19,6 +19,7 @@ if dein#load_state('/home/obyoxar/.cache/dein')
   "call dein#add('Shougo/neosnippet-snippets')
   call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('mrk21/yaml-vim')
+  call dein#add('WolfgangMehner/bash-support')
 
   " Required:
   call dein#end()

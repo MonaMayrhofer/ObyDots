@@ -135,6 +135,7 @@ crtolink otmux .otmux
 printf "\n${CNONE}==========${CNONE}\n\n"
 checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
 checkex tmux "Please install tmux 'sudo apt install tmux'"
+checkex nvim "Please install nvim 'sudo apt install neovim'"
 
 checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
 
