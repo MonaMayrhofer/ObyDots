@@ -22,7 +22,7 @@ echo "${extensionin} -> ${extensionout}"
 if [ "${extensionin}" == "mxf" ]; then
 	if [ "${extensionout}" == "mp4" ]; then
 		ffmpeg -i ${fullinfile} -c:v libx264 -profile:v high -crf 18 -b 40k -pix_fmt yuv420p ${fulloutfile}
-		# Tested and works on mandulis
+		# Tested and works on mandulis (Without Audio)
 	else
 		echo "Conversion from ${extensionin} to ${extensionout} isn't supported yet."
 	fi
