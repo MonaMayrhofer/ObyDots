@@ -1,5 +1,38 @@
 #!/bin/bash
 
-if [
+if [ $# -ne 2 ]; then
+	echo "Usage $0 [InFile] [OutFile]"
+fi
 
-ffmpeg -i input.mp4 -vcodec dnxhd -acodec pcm_s16le -s 1920x1080 -r 30000/1001 -b:v 36M -pix_fmt yuv422p -f mov output.mov
+extractextension(){
+	fullfile=$1
+	filename=$(basename -- "$fullfile")
+	extension="${filename##*.}"
+	extension="${extension,,}"
+	echo $extension
+}
+
+fullinfile=$1
+fulloutfile=$2
+extensionin=$(extractextension $fullinfile)
+extensionout=$(extractextension $fulloutfile)
+
+echo "${extensionin} -> ${extensionout}"
+
+if [ "${extensionin}" == "mxf" ]; then
+	if [ "${extensionout}" == "mp4" ]; then
+		ffmpeg -i ${fullinfile} -c:v libx264 -profile:v high -crf 18 -b 40k -pix_fmt yuv420p ${fulloutfile}
+		# Tested and works on mandulis
+	else
+		echo "Conversion from ${extensionin} to ${extensionout} isn't supported yet."
+	fi
+elif [ "${extensionout}" == "mov" ]; then
+	if [ "${extensionin}" == "mp4" ]; then
+		ffmpeg -i $fullinfile -vf yadif -codec:v libx264 -crf 1 -bf 2 -flags +cgop -pix_fmt yuv420p -codec:a aac -strict -2 -b:a 384k -r:a 48000 -movflags faststart $fulloutfile	
+	else
+		echo "Conversion from ${extensionin} to ${extensionout} isn't supported yet."
+	fi
+else
+	echo "Only conversion from or to .mov is supported"
+fi
+
