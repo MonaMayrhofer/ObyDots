@@ -1,4 +1,3 @@
-[test]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
-interval=3600
-color=#A4C2F4
+[system76]
+command=system76-power profile
+interval=once
