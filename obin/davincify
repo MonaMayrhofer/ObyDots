@@ -19,7 +19,7 @@ extensionout=$(extractextension $fulloutfile)
 
 echo "${extensionin} -> ${extensionout}"
 
-if [ "${extensionin}" == "mxf" ]; then
+if [ "${extensionin}" == "mxf" ] || [ "${extensionin}" == "mov" ]; then
 	if [ "${extensionout}" == "mp4" ]; then
 		# Tested and works on mandulis (Without Audio)
 		# ffmpeg -i ${fullinfile} -c:v libx264 -profile:v high -crf 18 -b 40k -pix_fmt yuv420p ${fulloutfile}
