@@ -1,0 +1,8 @@
+gnome.gtk.theme: Arc-Dark
+gnome.icon.theme: Papirus-Dark
+gnome.terminal.font: JetBrains Mono 12
+gnome.terminal.scrollbar: never
+gnome.wm.theme: Arc-Dark
+
+i3-wm.bar.position: top
+rofi.icon-theme: Papirus-Dark

@@ -140,6 +140,15 @@ checkex nvim "Please install nvim 'sudo apt install neovim'"
 
 checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
 
+if [ -d "/usr/share/regolith-compositor" ]; then
+  tail /usr/share/regolith-compositor/init -n 4 | head - -n 1 | grep -e "--experimental-backends$" > /dev/null
+  MODIFIED=$? 
+  if [ "$MODIFIED" -eq "1" ]; then
+    printf "[DesktopEnvironment ${CBOLD}Regolith${CNONE}] not modified to support blur. Please add '--experimental-backends' to the parameter list of compton in ${CUWHT}/usr/share/regolith-compositor/init${CNONE}\n"
+  fi
+else
+   printf "[DesktopEnvironment ${CBOLD}Regolith${CNONE}] not installed. Please use it: ${CUWHT}https://regolith-linux.org/${CNONE}\n"
+fi
 
 printf "[${CBOLD}dein${CNONE}] "
 if [ -d $HOME/.cache/dein ]; then
