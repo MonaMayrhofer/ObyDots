@@ -17,7 +17,10 @@ home=$HOME
 echo -e "Home: ${CGRN}$home${CNONE}"
 obydotrcgenpath="${HOME}/.obydotrc_generated"
 echo -e "ObyDotRc_Generated: ${CGRN}${obydotrcgenpath}${CNONE}"
+downloadpath="$scriptdir/odownload"
+echo -e "Download Dir: ${CGRN}$downloadpath${CNONE}"
 
+mkdir $downloadpath
 
 backupdatestr=$(date +%d_%m_%y_%H%M)
 
@@ -113,6 +116,45 @@ checkfont(){
   fi
 }
 
+checktheme(){
+  theme=$1
+  message=$2
+  printf "[Theme '${CBOLD}$theme${CNONE}'] "
+  if [ -d "/usr/share/icons/$theme" ]; then
+    printf "${CGRN}Installed${CNONE}\n"
+  else
+    printf "${CRED}$message${CNONE}\n"
+  fi
+}
+
+yesno(){
+  set -- $(locale LC_MESSAGES)
+  yesptrn="$1"; noptrn="$2"; yesword="$3"; noword="$4"
+
+  while true; do
+    read -p "Proceed (${yesword} / ${noword})? " yn
+    case $yn in
+      ${yesptrn##^} ) return 0; break;;
+      ${noptrn##^} ) return 1; break;; 
+      * ) echo "Answer ${yesword} / ${noword}.";;
+    esac
+  done
+}
+
+checkfile(){
+  file=$1
+  url=$2
+  message=$3
+  targetpath="$downloadpath/$file"
+  printf "[File '${CBOLD}$file${CNONE}'] "
+  if [ -f "$targetpath" ]; then
+    printf "${CGRN}Exists${CNONE}\n"
+  else
+    printf "Automatically downlaod ${CUWHT}$file${CNONE} from ${CUWHT}$url${CNONE}? \n"
+    yesno && wget "$url" -O "$targetpath"
+  fi
+}
+
 printf "\n${CNONE}==========${CNONE}\n\n"
 crtolink ozsh .ozsh
 mkcustomrc .zshrc
@@ -123,6 +165,7 @@ crtolink p10k.zsh .p10k.zsh
 crtolink tmux.conf .tmux.conf
 crtolink oasdf/asdf .asdf
 crtolink oregolith .config/regolith
+crtolink odownload .obydotdownload
 #crtolink vifmrc .config/vifm/vifmrc
 #crtolink ovim .vim
 #crtolink ovimrc .vimrc
@@ -137,9 +180,12 @@ printf "\n${CNONE}==========${CNONE}\n\n"
 checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
 checkex tmux "Please install tmux 'sudo apt install tmux'"
 checkex nvim "Please install nvim 'sudo apt install neovim'"
+checkex wget "Please install nvim 'sudo apt install wget'"
 
 checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
+checktheme "Sweet-cursors" "Please install from https://www.gnome-look.org/p/1393084/ to /usr/share/icons/Sweet-cursors"
 
+checkfile "PixelBackground.jpg" "https://images6.alphacoders.com/107/1075300.jpg"
 if [ -d "/usr/share/regolith-compositor" ]; then
   tail /usr/share/regolith-compositor/init -n 4 | head - -n 1 | grep -e "--experimental-backends$" > /dev/null
   MODIFIED=$? 
