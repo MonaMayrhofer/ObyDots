@@ -17,6 +17,25 @@ fulloutfile=$2
 extensionin=$(extractextension $fullinfile)
 extensionout=$(extractextension $fulloutfile)
 
+shift;
+shift;
+
+crf=18
+
+while [ "$#" -gt 0 ]; do
+	arg=$1
+	echo "Processing $arg"
+	case $arg in
+		"-s"|"--small")
+			crf=24
+			;;
+		*)
+			echo "Unknown parameter $arg"
+			;;
+	esac
+	shift
+done
+
 echo "${extensionin} -> ${extensionout}"
 
 if [ "${extensionin}" == "mxf" ] || [ "${extensionin}" == "mov" ]; then
@@ -24,7 +43,7 @@ if [ "${extensionin}" == "mxf" ] || [ "${extensionin}" == "mov" ]; then
 		# Tested and works on mandulis (Without Audio)
 		# ffmpeg -i ${fullinfile} -c:v libx264 -profile:v high -crf 18 -b 40k -pix_fmt yuv420p ${fulloutfile}
 		# From the website
-		ffmpeg -i ${fullinfile} -vf yadif -codec:v libx264 -crf 18 -bf 2 -flags +cgop -pix_fmt yuv420p -codec:a aac -strict -2 -b:a 384k -r:a 48000 -movflags faststart ${fulloutfile}	
+		ffmpeg -i ${fullinfile} -vf yadif -codec:v libx264 -crf $crf -bf 2 -flags +cgop -pix_fmt yuv420p -codec:a aac -strict -2 -b:a 384k -r:a 48000 -movflags faststart ${fulloutfile}	
 	else
 		echo "Conversion from ${extensionin} to ${extensionout} isn't supported yet."
 	fi
