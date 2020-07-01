@@ -203,6 +203,17 @@ colors:
   #  text: '#eaeaea'
   #  background: '#404040'
 
+  # Normal colors (Generated from background)
+  normal:
+    black:   '#0A0000'
+    red:     '#a61c3c'
+    green:   '#009A51'
+    yellow:  '#aa703a'
+    blue:    '#205765'
+    magenta: '#805d93'
+    cyan:    '#b1f8f2'
+    white:   '#ddd6c6'
+
   # Normal colors
   #normal:
   #  black:   '#000000'
