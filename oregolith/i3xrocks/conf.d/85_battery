@@ -1,0 +1,4 @@
+[battery2]
+command=~/ObyDots/obin/battery2
+markup=pango
+interval=30
