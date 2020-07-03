@@ -97,3 +97,5 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f "$HOME/.zshrc_custom" ]; then
 	source "$HOME/.zshrc_custom"
 fi
+
+conda deactivate
