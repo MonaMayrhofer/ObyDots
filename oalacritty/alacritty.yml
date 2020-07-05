@@ -174,8 +174,8 @@ font:
 # Colors (Tomorrow Night Bright)
 colors:
   # Default colors
-  primary:
-    background: '#2E2F2F'
+  # primary:
+    #  background: '#2E2F2F'
     # foreground: '#eaeaea'
 
     # Bright and dim foreground colors
@@ -203,16 +203,32 @@ colors:
   #  text: '#eaeaea'
   #  background: '#404040'
 
-  # Normal colors (Generated from background)
+  # === GRUVBOX COLORS from https://github.com/alacritty/alacritty/wiki/Color-schemes#gruvbox ===
+  primary:
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
   normal:
-    black:   '#0A0000'
-    red:     '#a61c3c'
-    green:   '#009A51'
-    yellow:  '#aa703a'
-    blue:    '#205765'
-    magenta: '#805d93'
-    cyan:    '#b1f8f2'
-    white:   '#ddd6c6'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+
+  # Bright colors
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
   # Normal colors
   #normal:
