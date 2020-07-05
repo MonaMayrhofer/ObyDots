@@ -1,4 +1,4 @@
-#define gtk_theme           Arc-Dark
+#define gtk_theme           Pop-dark
 #define icon_theme          Papirus-Dark
 #define desktop_wallpaper   obydots_root/odownload/PixelBackground.jpg 
 #define rofi_theme          obydots_root/oregolith/styles/obygruvbox/rofi.rasi 

@@ -97,12 +97,17 @@ mkcustomrc(){
   fi
 }
 
+missing_packages=""
 checkex() {
   command=$1
-  message=$2
+  name=$2
+  package=$3
   if [ ! $(which $command) ]; then
-    printf "[$> ${CBOLD}$command${CNONE}] doesn't exist. $message\n"
+    printf "[$> ${CBOLD}$command${CNONE}] doesn't exist. Please install $name via 'sudo apt install $package'.\n"
+    missing_packages="$missing_packages $package"
+    return 1
   fi
+  return 0
 }
 
 checkfont(){
@@ -156,6 +161,20 @@ checkfile(){
   fi
 }
 
+checkvscodeex(){
+  extension=$1
+  printf "[VSCode Extension '${CBOLD}$extension${CNONE}'] "
+  code --list-extensions | grep "^$extension$" >> /dev/null
+  if [ $? -eq 0 ]; then
+    printf "${CGRN}Exists${CNONE}\n"
+  else
+    printf "Install VSCode Extension '${CUWHT}$extension${CNONE}'? \n"
+    yesno && code --install-extension $extension
+  fi
+}
+
+
+
 printf "\n${CNONE}==========${CNONE}\n\n"
 crtolink ozsh .ozsh
 mkcustomrc .zshrc
@@ -179,9 +198,17 @@ crtolink otmux .otmux
 
 printf "\n${CNONE}==========${CNONE}\n\n"
 checkex fzf "Please install Fuzzyfinder 'sudo apt install fzf'"
-checkex tmux "Please install tmux 'sudo apt install tmux'"
-checkex nvim "Please install nvim 'sudo apt install neovim'"
-checkex wget "Please install nvim 'sudo apt install wget'"
+checkex tmux "tmux" "tmux"
+checkex nvim "nvim" "neovim"
+checkex wget "wget" "wget"
+checkex code "VisualStudio Code" "code"
+
+if [ $? -eq "0" ]; then
+  checkvscodeex jdinhlife.gruvbox
+  checkvscodeex s-nlf-fh.glassit
+fi
+
+
 
 checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
 checktheme "Sweet-cursors" "Please install from https://www.gnome-look.org/p/1393084/ to /usr/share/icons/Sweet-cursors"
