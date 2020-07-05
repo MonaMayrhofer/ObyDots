@@ -221,4 +221,4 @@ if [ -f ${xresourcegenpath} ]; then
   printf "Deleting old RC-File\n"
   rm ${xresourcegenpath}
 fi
-echo "obydots.rootpath: ${scriptdir}" >> ${xresourcegenpath}
+echo "#define obydots_root ${scriptdir}" >> ${xresourcegenpath}

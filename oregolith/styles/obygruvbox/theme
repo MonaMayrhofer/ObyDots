@@ -1,7 +1,7 @@
 #define gtk_theme           Arc-Dark
 #define icon_theme          Papirus-Dark
-#define desktop_wallpaper   ~/.obydotdownload/PixelBackground.jpg 
-#define rofi_theme          ~/.config/regolith/styles/obygruvbox/rofi.rasi 
+#define desktop_wallpaper   obydots_root/odownload/PixelBackground.jpg 
+#define rofi_theme          obydots_root/oregolith/styles/obygruvbox/rofi.rasi 
 #define theme_terminal_scrollbar never
 
 #define i3wm_window_border_size         1

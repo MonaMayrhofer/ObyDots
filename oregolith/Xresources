@@ -1,4 +1,4 @@
+#include "./Xresources-generated"
 #include "./styles/obygruvbox/root"
-#include "./Xresource-generated"
 
 i3-wm.gaps.focus_follows_mouse: true
