@@ -1,0 +1,35 @@
+! -- Styles - Colors
+#include "./color"
+
+! -- Styles - Fonts
+#include "./typeface"
+
+! -- Styles - Theme
+#include "./theme"
+
+! -- Applications
+! These files map values defined above into specific app settings.
+!#include "./st-term" -- Sorry no ST for you :(
+#include "./i3-wm"
+#include "/etc/regolith/styles/i3xrocks"
+#include "/etc/regolith/styles/rofi"
+#include "/etc/regolith/styles/gnome"%
+
+!i3-wm.bar.position: top
+!i3-wm.bar.background.color:	#282828
+!i3-wm.bar.separator.color:	#98971a
+!i3-wm.bar.statusline.color:	#ff0000
+!i3-wm.bar.workspace.active.background.color:	#689d6a
+!i3-wm.bar.workspace.active.border.color:	#689d6a
+!i3-wm.bar.workspace.active.text.color:		#1F2430
+!
+!i3-wm.bar.workspace.focused.background.color:	#98971a
+!i3-wm.bar.workspace.focused.border.color:	#98971a
+!i3-wm.bar.workspace.focused.text.color:		#1F2430
+!
+!i3-wm.bar.workspace.inactive.background.color:	#a89984
+!i3-wm.bar.workspace.inactive.border.color:	#a89984
+!i3-wm.bar.workspace.inactive.text.color:	#292B30
+!
+!i3-wm.bar.workspace.urgent.background.color:	#FF3333
+!i3-wm.bar.workspace.urgent.border.color:	#FF3333
