@@ -166,7 +166,7 @@ crtolink p10k.zsh .p10k.zsh
 crtolink tmux.conf .tmux.conf
 crtolink oasdf/asdf .asdf
 crtolink oregolith .config/regolith
-crtolink odownload .obydotdownload
+#crtolink odownload .obydotdownload
 #crtolink vifmrc .config/vifm/vifmrc
 #crtolink ovim .vim
 #crtolink ovimrc .vimrc
