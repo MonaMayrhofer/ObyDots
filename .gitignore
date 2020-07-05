@@ -1,7 +1,9 @@
 odownload/
 backup/
 oregolith/flags/
+oregolith/Xresources-generated
 onvim/.netrwhist
+
 
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python

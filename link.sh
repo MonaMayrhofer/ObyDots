@@ -16,6 +16,7 @@ echo -e "User: ${CGRN}$(whoami) ($(id -u))${CNONE}"
 home=$HOME
 echo -e "Home: ${CGRN}$home${CNONE}"
 obydotrcgenpath="${HOME}/.obydotrc_generated"
+xresourcegenpath="$scriptdir/oregolith/Xresources-generated"
 echo -e "ObyDotRc_Generated: ${CGRN}${obydotrcgenpath}${CNONE}"
 downloadpath="$scriptdir/odownload"
 echo -e "Download Dir: ${CGRN}$downloadpath${CNONE}"
@@ -215,4 +216,9 @@ if [ -f ${obydotrcgenpath} ]; then
 fi
 echo "OBYDOTBINDIR='${scriptdir}/obin'" >> ${obydotrcgenpath}
 
-cat ${obydotrcgenpath}
+printf "Generating Xresouce-generated in ${CUWHT}${xresourcegenpath}${CNONE}\n"
+if [ -f ${xresourcegenpath} ]; then
+  printf "Deleting old RC-File\n"
+  rm ${xresourcegenpath}
+fi
+echo "obydots.rootpath: ${scriptdir}" >> ${xresourcegenpath}
