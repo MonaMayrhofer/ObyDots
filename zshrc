@@ -73,6 +73,7 @@ fi
 # ============= OWN COMMANDS =============
 alias deepwhich="readlink -f $(which $1)"
 alias ll="ls -la -h --color"
+alias ls="ls --color"
 
 export PATH=$PATH:~/bin
 
