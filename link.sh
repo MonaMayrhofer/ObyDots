@@ -205,10 +205,13 @@ checkex code "VisualStudio Code" "code"
 
 if [ $? -eq "0" ]; then
   checkvscodeex jdinhlife.gruvbox
-  checkvscodeex s-nlf-fh.glassit
+  #checkvscodeex s-nlf-fh.glassit
 fi
 
-
+grep "i3bar_command i3bar --transparency" -i /etc/regolith/i3/config > /dev/null
+if [ $? -ne "0" ]; then
+  printf "${CRED} [ERROR] Transparency is not enabled in the i3bar. Please edit ${CUWHT}/etc/regolith/i3/config${CRED} and add ${CUWHT}'i3bar_command i3bar --transparency'${CRED} into the 'bar { ... }' section.${CNONE}\n"
+fi
 
 checkfont "JetBrains Mono" "Please install from https://www.jetbrains.com/lp/mono/. 'wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip'"
 checktheme "Sweet-cursors" "Please install from https://www.gnome-look.org/p/1393084/ to /usr/share/icons/Sweet-cursors"

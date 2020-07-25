@@ -19,11 +19,11 @@
 #define color_ltyellow #fabd2f
 #define color_ltcyan   #8ec07c
 
-#define color_base03   #1d2021
-#define color_base02   #282828
+#define color_base03   #282828d9
+#define color_base02   #1d2021
 #define color_base01   #a89984
 #define color_base00   #d5c4a1
-#define color_base0    #ebdbb2
+#define color_base0    #282828
 #define color_base1    #fbf1c7
 #define color_base2    color_orange
 #define color_base3    #FFFFFF
