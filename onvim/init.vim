@@ -20,6 +20,7 @@ if dein#load_state('/home/obyoxar/.cache/dein')
   call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('mrk21/yaml-vim')
   call dein#add('WolfgangMehner/bash-support')
+  call dein#add('cespare/vim-toml')
 
   " Required:
   call dein#end()

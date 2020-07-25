@@ -1,6 +1,6 @@
 #define gtk_theme           Pop-dark
 #define icon_theme          Papirus-Dark
-#define desktop_wallpaper   obydots_root/odownload/PixelBackground.jpg 
+#define desktop_wallpaper   obydots_root/resource/background.png 
 #define rofi_theme          obydots_root/oregolith/styles/obygruvbox/rofi.rasi 
 #define theme_terminal_scrollbar never
 
