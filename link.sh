@@ -202,6 +202,7 @@ checkex tmux "tmux" "tmux"
 checkex nvim "nvim" "neovim"
 checkex wget "wget" "wget"
 checkex code "VisualStudio Code" "code"
+checkex i3lock-fancy "I3Lock-Fancy" "i3lock-fancy"
 
 if [ $? -eq "0" ]; then
   checkvscodeex jdinhlife.gruvbox

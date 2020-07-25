@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+value=$1
+xrdb -query -all | sed -En "s/^${value}:\\s+([^\s].+)$/\\1/p"
