@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+INPUT=$1
+OUTPUT=$2
+
+echo "Assuming input pdf size of 6.5cm x 9.5cm"
+
+pdfjam --nup 3x3 --scale 1 --papersize "{195mm,285mm}" --no-landscape $INPUT -o $OUTPUT 

@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
 conky.config = {
-	background = true,
+	background = false,
 	update_interval = 1,
 	cpu_avg_samples = 2,
 	net_avg_samples = 2,
@@ -39,7 +39,7 @@ conky.config = {
 
 	
 	own_window = true,
-	own_window_class = 'Conky',
+	own_window_class = 'conky',
 	own_window_type = 'override',
 	own_window_argb_visual = true,
 	own_window_argb_value = 120,
@@ -56,7 +56,7 @@ conky.config = {
 	alignment = 'top_left',
 	gap_x = 20,
 	gap_y = 50,
-	draw_shades = true,
+	draw_shades = false,
 	draw_outline = false,
 	draw_borders = false,
 	draw_graph_borders = false,
@@ -67,11 +67,11 @@ conky.config = {
 	own_window_colour = '#000000',
 	minimum_width = 0, minimum_height = 0,
 }
-
 conky.text = [[
-	${font MuseoModerno:size=40}${time %A} 
-	${font MuseoModerno:size=40}${time %B} 
+    ${font MuseoModerno:size=40}${time %A} 
+	${voffset 100}${font MuseoModerno:size=40}${time %B} 
 ]]
+
 
 --[[
 ${color #DD3A21}C₈H₁₀N₄O₂${color}${goto 200}${font FontAwesome}${font}${voffset -2} ${time %d/%m/%y}  ${font FontAwesome}${font}${voffset -2} ${time %H:%M}

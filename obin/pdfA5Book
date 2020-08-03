@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+if [[ $# -lt 3 ]]; then
+    echo "Usage: $0 [infile] [outfile] [numpages]"
+    exit 1
+fi
+IN_FILE=$(realpath "$1")
+OUT_FILE=$(realpath "$2")
+PAGES=$3
+let FOURGRP=(${PAGES}+3)/4 
+#echo $FOURGRP
+echo "In: ${IN_FILE}"
+
+SEQ=""
+for ((i=0; i < $FOURGRP; i++)); do
+    for j in 1 3 4 2; do
+        #echo $i $j
+        let pgnm=$i*4+$j
+        #echo $pgnm
+        if [[ $pgnm -le $PAGES ]]; then
+            SEQ="$SEQ A$pgnm"
+        else
+            SEQ="$SEQ B1"
+        fi
+    done
+done
+echo ${SEQ}
+
+pdftk A="${IN_FILE}" B="/home/obyoxar/Work/pdfwork/blank.pdf" cat ${SEQ} output - | pdfnup --outfile ${OUT_FILE}
