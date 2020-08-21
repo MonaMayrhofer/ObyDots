@@ -17,10 +17,23 @@ if dein#load_state('/home/obyoxar/.cache/dein')
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
+
+  " To install :call dein#install() and :DeinUpdate
+
+  " DEIN (Plugin Manager UI)
   call dein#add('wsdjeg/dein-ui.vim')
+
+
+  " Distraction Free writing
+  call dein#add('junegunn/goyo.vim')
+  call dein#add('junegunn/limelight.vim')
+  call dein#add('oinkoboinko/yoink.vim')
+
+  " Language Integrations
   call dein#add('mrk21/yaml-vim')
   call dein#add('WolfgangMehner/bash-support')
   call dein#add('cespare/vim-toml')
+
 
   " Required:
   call dein#end()
