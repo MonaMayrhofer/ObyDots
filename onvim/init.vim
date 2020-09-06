@@ -27,7 +27,7 @@ if dein#load_state('/home/obyoxar/.cache/dein')
   " Distraction Free writing
   call dein#add('junegunn/goyo.vim')
   call dein#add('junegunn/limelight.vim')
-  call dein#add('oinkoboinko/yoink.vim')
+"  call dein#add('oinkoboinko/yoink.vim')
 
   " Language Integrations
   call dein#add('mrk21/yaml-vim')
@@ -55,3 +55,9 @@ set nowrap
 
 set scrolloff=5
 
+
+" Limelight and Goyo Integration and Color scheme
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_guifg = '#777777'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
