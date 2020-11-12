@@ -33,6 +33,16 @@ if dein#load_state('/home/obyoxar/.cache/dein')
   call dein#add('mrk21/yaml-vim')
   call dein#add('WolfgangMehner/bash-support')
   call dein#add('cespare/vim-toml')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+	call dein#add('roxma/nvim-yarp')
+	call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+  call dein#add('deoplete-plugins/deoplete-clang')
+
+  " Grammar and Spell checking
+  call dein#add('rhysd/vim-grammarous')
 
 
   " Required:
