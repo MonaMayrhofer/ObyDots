@@ -65,12 +65,16 @@ source ~/.ozsh/k/k.plugin.zsh
 source ~/.ozsh/oh-my-zsh/plugins/git/git.plugin.zsh
 
 # ======= ENABLE fzf =========
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M vicmd '^R' history-incremental-search-backward
 source ~/.ozsh/oh-my-zsh/plugins/fzf/fzf.plugin.zsh
+export FZF_DEFAULT_COMMAND='find . -name .git -prune -o -name node_modules -prune -o -name coverage -prune -o -name tmp -prune -o -type f -print'
 
 monitorstep "Asdf"
 # ======= ENABLE ASDF ==========
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/completions/asdf.bash
 
 monitorstep "Anaconda Setup"
 if test ENABLE_ANACONDA; then
@@ -114,3 +118,5 @@ monitorstep "SdkMan"
 export SDKMAN_DIR="/home/obyoxar/.sdkman"
 [[ -s "/home/obyoxar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/obyoxar/.sdkman/bin/sdkman-init.sh"
 monitorstep "Done."
+
+
