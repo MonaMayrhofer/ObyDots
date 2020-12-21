@@ -48,6 +48,9 @@ if dein#load_state('/home/obyoxar/.cache/dein')
   call dein#add('neoclide/coc.nvim', { 'merged': 0 })
   " call dein#add('rust-lang/rust.vim')
 
+  " Grammar and Spell checking
+  call dein#add('rhysd/vim-grammarous')
+
 
   " Required:
   call dein#end()
@@ -249,6 +252,11 @@ highlight CocInfoSign ctermfg=6
 highlight CocHintSign ctermfg=12
 highlight CocErrorSign ctermbg=9
 
+" Limelight and Goyo Integration and Color scheme
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_guifg = '#777777'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 
 
@@ -267,3 +275,4 @@ let g:fzf_action = {
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap ( ()<left>
+

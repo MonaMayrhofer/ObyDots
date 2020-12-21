@@ -11,7 +11,7 @@ rm -f ~/.zshmonitor
 touch ~/.zshmonitor
 
 monitorstep "Initial"
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
 source "${HOME}/.obydotrc_generated"
@@ -28,6 +28,11 @@ fi
 # The following variable will be automatically set by the link script, which inputs
 # the to the `obin` directory in the ObyDots directory.
 export PATH="${PATH}:${HOME}/bin:${OBYDOTBINDIR}:${HOME}/.local/bin"
+
+monitorstep "Asdf"
+# ======= ENABLE ASDF ==========
+. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
 
 monitorstep "Tmux"
 # ======= ENABLE TMUX =========
@@ -101,6 +106,9 @@ monitorstep "Aliases"
 alias deepwhich="readlink -f $(which $1)"
 alias ll="ls -la -h --color"
 alias ls="ls --color"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 export PATH=$PATH:~/bin
 
