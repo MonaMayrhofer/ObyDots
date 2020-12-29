@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -o nounset                                  # Treat unset variables as an error
+set -e
+
+echo 'DEPRECATED. USE `polybar-msg action "#brightness.inc"` instead'
+exit
+
+if [[ $# -ne 1 ]]; then
+	echo "Usage: $0 amount"
+	exit
+fi
+
+amount=$1
+bl_device=intel_backlight
+bl_bright=/sys/class/backlight/${bl_device}/brightness
+bl_max=/sys/class/backlight/${bl_device}/max_brightness
+old=$(cat $bl_bright)
+max=$(cat ${bl_max})
+
+echo "$old + $amount"
+new=$(( $old + $amount))
+
+if [[ "$new" -lt "10" ]]; then
+	echo "$new < 10"
+	new=10
+fi
+
+if [[ "$new" -gt "$max" ]]; then
+	echo "$new > $max"
+	new=$max
+fi
+
+echo "$new" | tee $bl_bright

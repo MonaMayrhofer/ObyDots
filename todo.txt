@@ -1,0 +1,14 @@
+* polybar-tray has ugly icons
+* dunst has ugly icons
+* rofi is ugly
+* Map Laptop fn-keys to their actual action
+* volume
+* bluetooth
+* pop-up windows have a title from i3 and that title is ugly
+
+Debug Polyar with:
+killall polybar
+~/.config/polybar/launch.sh -w
+
+Debug Dunst with:
+notify-send -u urgency "oink2

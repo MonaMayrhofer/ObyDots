@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+FILE=$(readlink -f $1)
+DIRNAME=$(dirname $FILE)
+BASENAME=$(basename $FILE)
+shift
+COMMAND=$@
+
+COMMAND0=""
+
+CURCOMMAND=""
+
+while [[ $# -gt 0 ]]; do
+	case $1 in
+		"and")
+			COMMAND0=$CURCOMMAND
+			CURCOMMAND=""
+			;;
+		*)
+			CURCOMMAND="$CURCOMMAND $1"
+	esac
+	shift
+done
+
+echo "Watching... $DIRNAME for changes on $BASENAME"
+inotifywait -e close_write -m "$DIRNAME" |
+while read -r directory events filename; do
+	if [ "$filename" = "$BASENAME" ]; then
+		echo "Change... Execute: '$COMMAND0'"
+		echo "Change... Execute: '$CURCOMMAND'"
+		$COMMAND0
+		$CURCOMMAND
+	fi
+done
