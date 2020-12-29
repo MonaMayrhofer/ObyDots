@@ -28,3 +28,4 @@ fi
 
 #Add Obydots-Path
 PATH="$HOME/.obydots/bin:$PATH"
+source "$HOME/.cargo/env"

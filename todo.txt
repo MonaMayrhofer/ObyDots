@@ -6,6 +6,10 @@
 * bluetooth
 * pop-up windows have a title from i3 and that title is ugly
 
+* Warn because of vim-lag on first start (installing everything)
+* Init-Script for installing starship
+
+
 Debug Polyar with:
 killall polybar
 ~/.config/polybar/launch.sh -w
