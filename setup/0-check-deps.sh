@@ -42,3 +42,4 @@ checkdep zsh || maybe apt install zsh
 checkdep polybar || maybe apt install polybar
 checkdep i3 || maybe apt install i3-gaps
 checkdep picom || maybe apt install picom
+checkdep hsetroot || maybe apt install hsetroot
