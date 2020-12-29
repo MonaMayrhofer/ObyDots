@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-folder=$1
-
-mv $folder/.* .
-mv $folder/* .
-
-rmdir $folder

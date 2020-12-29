@@ -1,24 +1,6 @@
-[submodule "ozsh/powerlevel10k"]
-	path = ozsh/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
-[submodule "ozsh/zsh-z"]
-	path = ozsh/zsh-z
-	url = git@github.com:agkozak/zsh-z.git
-[submodule "ozsh/k"]
-	path = ozsh/k
-	url = git@github.com:supercrabtree/k.git
-[submodule "ozsh/zsh-syntax-highlighting"]
-	path = ozsh/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
-[submodule "ozsh/oh-my-zsh"]
-	path = ozsh/oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
-[submodule "otmux/tmux-pain-control"]
-	path = otmux/tmux-pain-control
-	url = git@github.com:tmux-plugins/tmux-pain-control.git
-[submodule "otmux/tmux-yank"]
-	path = otmux/tmux-yank
-	url = https://github.com/tmux-plugins/tmux-yank
-[submodule "oasdf/asdf"]
-	path = oasdf/asdf
-	url = https://github.com/asdf-vm/asdf.git
+[submodule "thirdparty/zplug"]
+	path = thirdparty/zplug
+	url = https://github.com/zplug/zplug
+[submodule "thirdparty/teiler"]
+	path = thirdparty/teiler
+	url = https://github.com/carnager/teiler.git

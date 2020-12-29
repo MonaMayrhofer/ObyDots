@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-echo sudo systemctl $1 wol.service
-sudo systemctl $1 wol.service
