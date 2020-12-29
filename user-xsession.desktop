@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=User .xinitrc
+Comment=Custom User .xinitrc
+Exec=/etc/X11/Xsession
+Type=Application
+X-LightDM-DesktopName=User .xinitrc
+DesktopNames=User .xinitrc
