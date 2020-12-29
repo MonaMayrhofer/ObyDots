@@ -1,6 +1,6 @@
 [submodule "thirdparty/zplug"]
 	path = thirdparty/zplug
-	url = https://github.com/zplug/zplug
+	url = https://github.com/zplug/zplug.git
 [submodule "thirdparty/teiler"]
 	path = thirdparty/teiler
 	url = https://github.com/carnager/teiler.git
