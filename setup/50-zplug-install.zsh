@@ -1,4 +1,4 @@
 #!/bin/bash -
 
 set -o nounset                                  # Treat unset variables as an error
-zplug install
+echo "Please manually run 'zplug install'"
