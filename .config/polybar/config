@@ -5,6 +5,7 @@ system-bg=#777765
 gruv-bg=#282828
 gruv-bg-alt=#3c3836
 gruv-fg=#ebdbb2
+gruv-fg-alt=#ebdbb2
 gruv-orange=#fe8019
 
 [bar/top]
@@ -76,13 +77,17 @@ format="<label-state><label-mode>"
 #gruv-bg-alt=#3c3836
 #gruv-fg=#ebdbb2
 
-label-focused="%{F#3c3836}%{B#282828}%{F#ebdbb2}%{B#3c3836}%icon%%{F#3c3836}%{B#282828}%{F#ebdbb2}%{B#3c3836}"
+label-focused="%{F#3c3836}%{B#282828}%{F#fe8019}%{B#3c3836}%icon%%{F#3c3836}%{B#282828}%{F#ebdbb2}%{B#3c3836}"
 label-focused-background=${colors.gruv-bg-alt}
-label-focused-foreground=${colors.gruv-fg}
+label-focused-foreground=${colors.gruv-orange}
 
 label-unfocused=" %icon% "
 label-unfocused-background=${colors.gruv-bg}
 label-unfocused-foreground=${colors.gruv-fg}
+
+label-visible=" %icon% "
+label-visible-background=${colors.gruv-bg}
+label-visible-foreground=${colors.gruv-orange}
 
 [preset/text-tray]
 type=custom/text

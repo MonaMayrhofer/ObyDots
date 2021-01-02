@@ -29,6 +29,7 @@ create-link .zshrc
 create-link .profile
 create-link .obydots
 create-link-named thirdparty/zplug .zplug
+create-link-named thirdparty/asdf .asdf
 
 for confdir in ${SCRIPTDIR}/.config/*
 do
