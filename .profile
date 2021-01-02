@@ -30,6 +30,3 @@ fi
 PATH="$HOME/.obydots/bin:$PATH"
 source "$HOME/.cargo/env"
 
-if [ -d "$HOME/.obydots/profiles/$(hostname)" ]; then
-	source "$HOME/.obydots/profiles/$(hostname)/.profile"
-fi
