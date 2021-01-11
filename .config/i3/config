@@ -27,6 +27,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # bindsym XF86MonBrightnessUp exec --no-startup-id brightness-ctl +10
 bindsym XF86MonBrightnessUp exec --no-startup-id polybar-msg action "#backlight.inc"
 bindsym XF86MonBrightnessDown exec --no-startup-id polybar-msg action "#backlight.dec"
+bindsym --release $mod+Shift+o exec /home/obyoxar/.obydots/bin/toggle-opaque
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

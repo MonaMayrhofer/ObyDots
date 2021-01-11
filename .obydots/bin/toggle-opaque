@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+WINDOW_ID=$(xwininfo -wm | grep -oP 'xwininfo: Window id: \K(0x[0-9a-f]+)')
+echo "Operating on $WINDOW_ID"
+
+PROPERTY=$(xprop -id 0x3c00002 -notype -f KEEP_OPAQUE 8s '=$0\n' KEEP_OPAQUE | grep -oP 'KEEP_OPAQUE="\K(\w+)')
+
+echo $PROPERTY
+
+if [[ "$PROPERTY" = "true" ]]; then
+	echo "Disabling..."
+	xprop -id $WINDOW_ID -format KEEP_OPAQUE 8s -remove KEEP_OPAQUE
+else
+	echo "Enabling..."
+	xprop -id $WINDOW_ID -format KEEP_OPAQUE 8s -set KEEP_OPAQUE "true"
+fi
+
+# xprop -id $WINDOW_ID
+
