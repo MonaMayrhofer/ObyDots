@@ -3,6 +3,7 @@
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh, from:github, as:plugin
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "agkozak/zsh-z", from:github
 zplug load
 #\================/
 
