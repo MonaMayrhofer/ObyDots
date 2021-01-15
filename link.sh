@@ -25,7 +25,7 @@ create-link-named() {
 }
 
 create-link .xsession
-create-link .xinitrc
+# create-link .xinitrc
 create-link .zshrc
 create-link .profile
 create-link .obydots
