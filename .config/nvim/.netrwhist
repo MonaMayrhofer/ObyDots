@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/obyoxar/ObyDots/.config/picom'
-let g:netrw_dirhist_4='/home/desktest/ObyDots/.config'
-let g:netrw_dirhist_3='/home/obyoxar/documents/esphome/ledthread'
-let g:netrw_dirhist_2='/home/obyoxar/documents/esp-tests/esp-helloworld/src'
-let g:netrw_dirhist_1='/home/obyoxar/pathfinder/obymethod.md'
