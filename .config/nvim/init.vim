@@ -202,8 +202,13 @@ nnoremap <silent> <space>a  :CocAction<cr>
 
 "
 "QUICK ACCESS
-" Quicksave with leader
-nmap <leader>w :w<CR>
+" Window Changing
+nnoremap <M-w> <C-w>w
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
+nnoremap <leader><leader> <c-^>
 " Esc is cancer.... remap
 nnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
@@ -235,7 +240,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-nnoremap <leader><leader> <c-^>
 
 """ Fix Popup Menu (of coc for gruvbox scheme)
 highlight Pmenu ctermfg=255
@@ -288,7 +292,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 """ Auto close Brackets
-inoremap { {}<left>
-inoremap [ []<left>
-inoremap ( ()<left>
+" inoremap { {}<left>
+" inoremap [ []<left>
+" inoremap ( ()<left>
 

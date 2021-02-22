@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xsetwacom --set "Wacom Intuos S 2 Pad pad" MapToOutput HEAD-0
+xsetwacom --set "Wacom Intuos S 2 Pad stylus" MapToOutput HEAD-0

@@ -6,8 +6,13 @@
 * bluetooth
 * pop-up windows have a title from i3 and that title is ugly
 
+
 * Warn because of vim-lag on first start (installing everything)
 * Init-Script for installing starship
+
+
+# IDEAS:
+ * rofi combine with fzf -l
 
 
 Debug Polyar with:
@@ -16,3 +21,4 @@ killall polybar
 
 Debug Dunst with:
 notify-send -u urgency "oink2
+
