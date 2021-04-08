@@ -7,6 +7,7 @@ gruv-bg-alt=#3c3836
 gruv-fg=#ebdbb2
 gruv-fg-alt=#ebdbb2
 gruv-orange=#fe8019
+gruv-blue=#458588
 
 [bar/top]
 monitor=
@@ -76,10 +77,15 @@ format="<label-state><label-mode>"
 #gruv-bg=#282828
 #gruv-bg-alt=#3c3836
 #gruv-fg=#ebdbb2
+#gruv-blue=#458588
 
 label-focused="%{F#3c3836}%{B#282828}%{F#fe8019}%{B#3c3836}%icon%%{F#3c3836}%{B#282828}%{F#ebdbb2}%{B#3c3836}"
 label-focused-background=${colors.gruv-bg-alt}
 label-focused-foreground=${colors.gruv-orange}
+
+label-urgent="%{F#458588}%{B#282828}%{F#282828}%{B#458588}%icon%%{F#458588}%{B#282828}%{F#ebdbb2}%{B#458588}"
+label-urgent-background=${colors.gruv-fg}
+label-urgent-foreground=${colors.gruv-bg}
 
 label-unfocused=" %icon% "
 label-unfocused-background=${colors.gruv-bg}
