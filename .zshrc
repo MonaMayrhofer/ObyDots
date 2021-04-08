@@ -1,3 +1,4 @@
+fpath+=~/.zfunc
 
 #/======= ZPLUG ===\=
 source ~/.zplug/init.zsh
@@ -25,3 +26,9 @@ alias gcmsg="git commit -m"
 alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
+
+
+
+if [[ -e "$HOME/.zshrc_local" ]]; then
+	. $HOME/.zshrc_local
+fi
