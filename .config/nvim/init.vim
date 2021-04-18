@@ -51,6 +51,8 @@ if dein#load_state('~/.cache/dein')
   " Grammar and Spell checking
   call dein#add('rhysd/vim-grammarous')
 
+  call dein#add('preservim/nerdtree')
+
 
   " Required:
   call dein#end()
@@ -186,16 +188,16 @@ nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
 
 " Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
 
 " Implement methods for trait
-nnoremap <silent> <space>i  :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
+nnoremap <silent> <leader>i  :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
 
 " Show actions available at this location
-nnoremap <silent> <space>a  :CocAction<cr>
+nnoremap <silent> <leader>a  :CocAction<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -296,3 +298,7 @@ let g:fzf_action = {
 " inoremap [ []<left>
 " inoremap ( ()<left>
 
+
+""" NERDTree
+noremap <leader>f :NERDTreeFocus<CR>
+noremap <C-f> :NERDTreeToggle<CR>

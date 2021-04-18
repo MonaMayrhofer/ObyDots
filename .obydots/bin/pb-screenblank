@@ -1,0 +1,36 @@
+#!/bin/bash 
+
+sleep_pid=0
+to=0
+
+updateTo() {
+    to=$(xset q | sed -n "s/^.*timeout: *\([0-9]\+\).*$/\1/p")
+}
+
+toggle() {
+    updateTo
+    if [[ to -eq "0" ]]; then
+	xset s on && notify-send -u low "Screen-Saver" "Screen saver is now enabled"
+    else
+	xset s off && notify-send -u low "Screen-Saver" "Screen saver is now disabled"
+    fi
+    if [ "$sleep_pid" -ne 0 ]; then
+        kill $sleep_pid >/dev/null 2>&1
+    fi
+}
+
+
+trap "toggle" USR1
+
+while true; do
+    updateTo
+    if [[ to -eq "0" ]]; then
+	# Screensaver: Off
+	echo ""
+    else
+	# Screensaver: On
+	echo ""
+    fi
+    sleep 600 & sleep_pid=$!
+    wait
+done

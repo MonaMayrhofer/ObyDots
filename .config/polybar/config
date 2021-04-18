@@ -28,7 +28,7 @@ height=20
 
 enable-ipc=true
 
-modules-right=backlight pulseaudio battery text-tray-end dunst
+modules-right=backlight pulseaudio battery text-tray-end scblank dunst
 modules-center=datetime
 modules-left=i3 text-workspace-end title
 
@@ -109,16 +109,6 @@ inherit=preset/text-tray
 content=" "
 
 
-[module/dunst]
-type = custom/ipc
-initial = 1
-format-padding=1
-format-foreground=${colors.gruv-fg}
-format-background=${colors.gruv-bg}
-
-hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:} %{A}" &
-hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:} %{A}" &
-
 [module/battery]
 type = internal/battery
 ; This is useful in case the battery never reports 100% charge
@@ -186,3 +176,25 @@ format-padding = 1
 label = %title%
 label-maxlen = 20
 label-empty = 
+
+[module/scblank]
+type = custom/script
+format-padding=1
+format-foreground=${colors.gruv-fg}
+format-background=${colors.gruv-bg}
+exec=pb-screenblank
+tail = true
+# click-left = kill -USR1 %pid%
+click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-padding=1
+format-foreground=${colors.gruv-fg}
+format-background=${colors.gruv-bg}
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:} %{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:} %{A}" &
+
