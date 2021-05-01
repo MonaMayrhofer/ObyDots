@@ -27,6 +27,7 @@ create-link-named() {
 create-link .xsession
 # create-link .xinitrc
 create-link .zshrc
+create-link .ghci
 create-link .profile
 create-link .obydots
 create-link-named thirdparty/zplug .zplug

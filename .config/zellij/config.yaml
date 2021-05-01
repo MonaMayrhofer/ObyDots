@@ -1,0 +1,4 @@
+keybinds:
+  normal:
+    - action: ['GoToNextTab']
+      key: [ Ctrl: 'p' ]

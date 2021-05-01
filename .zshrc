@@ -26,6 +26,7 @@ alias gcmsg="git commit -m"
 alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
+alias h="ghci"
 
 
 
