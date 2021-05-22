@@ -287,7 +287,7 @@ noremap <leader>n :call ToggleLN()<cr>
 
 """ Enable FZF (Control-F)
 set rtp+=~/.fzf
-nnoremap <C-f> :FZF<CR>
+nnoremap <C-o> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-h': 'split',
