@@ -37,7 +37,6 @@ fi
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 
-
 # alias cat="echo \"NOPE. Let's use 'batcat (bat)' pls\ncat: \" && cat $@"
 # alias bat="batcat"
 # alias ls="echo \"NOPE. Let's use 'exa (x)' pls\nls: : \" && ls $@"
