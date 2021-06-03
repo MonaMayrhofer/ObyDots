@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show drun
 # start ranger (a program launcher)
-bindsym --release $mod+o exec kitty ranger
+bindsym --release $mod+numbersign exec kitty ranger
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
