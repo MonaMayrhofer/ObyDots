@@ -37,14 +37,3 @@ fi
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 
-# alias cat="echo \"NOPE. Let's use 'batcat (bat)' pls\ncat: \" && cat $@"
-# alias bat="batcat"
-# alias ls="echo \"NOPE. Let's use 'exa (x)' pls\nls: : \" && ls $@"
-# alias x="exa"
-# alias xx="exa -l"
-# alias find="echo \"NOPE. Let's use 'fd' pls\n find: \" && find $@"
-# alias ps="echo \"NOPE. Let's use 'procs'\n ps:: \" && ps $@"
-# alias top="echo \"NOPE. Let's use 'bottom (btm)'\n ps:: \" && top $@"
-# alias cd="echo \"NOPE. Let's use 'zoxide (z)'\n cd:: \" && cd $@" #zoxide
-# 
-# eval "$(zoxide init zsh)"
