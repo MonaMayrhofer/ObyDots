@@ -206,7 +206,8 @@ colors:
   # === GRUVBOX COLORS from https://github.com/alacritty/alacritty/wiki/Color-schemes#gruvbox ===
   primary:
     # hard contrast: background = '#1d2021'
-    background: '#282828'
+    # background: '#282828'
+    background: '#888888'
     # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
   normal:
@@ -306,7 +307,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 1
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

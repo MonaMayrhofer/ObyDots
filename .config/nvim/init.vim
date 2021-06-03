@@ -24,6 +24,8 @@ if dein#load_state('~/.cache/dein')
   " DEIN (Plugin Manager UI)
   call dein#add('wsdjeg/dein-ui.vim')
 
+  call dein#add('morhetz/gruvbox')
+
 
   " Distraction Free writing
   call dein#add('junegunn/goyo.vim')
@@ -63,6 +65,11 @@ if dein#check_install()
   call dein#install()
 endif
 "End dein Scripts-------------------------
+
+
+let g:gruvbox_italic=1
+set termguicolors
+colorscheme gruvbox
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -287,11 +294,13 @@ noremap <leader>n :call ToggleLN()<cr>
 
 """ Enable FZF (Control-F)
 set rtp+=~/.fzf
-nnoremap <C-f> :FZF<CR>
+nnoremap <C-l> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+nnoremap <C-p> :Buffers<CR>
 
 """ Auto close Brackets
 " inoremap { {}<left>
@@ -302,3 +311,8 @@ let g:fzf_action = {
 """ NERDTree
 noremap <leader>f :NERDTreeFocus<CR>
 noremap <C-f> :NERDTreeToggle<CR>
+
+""" Neovide
+let g:neovide_cursor_vfx_mode="pixiedust"
+" set gfn=JetBrains\ Mono\ Nerd\ Font
+set gfn=JetBrains\ Mono

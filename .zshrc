@@ -4,7 +4,7 @@ fpath+=~/.zfunc
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh, from:github, as:plugin
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "agkozak/zsh-z", from:github
+# zplug "agkozak/zsh-z", from:github
 zplug load
 #\================/
 
@@ -33,3 +33,7 @@ alias h="ghci"
 if [[ -e "$HOME/.zshrc_local" ]]; then
 	. $HOME/.zshrc_local
 fi
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
+source /home/obyoxar/.config/broot/launcher/bash/br
