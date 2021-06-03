@@ -36,4 +36,3 @@ fi
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
-source /home/obyoxar/.config/broot/launcher/bash/br
