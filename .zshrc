@@ -22,18 +22,20 @@ alias ...="cd ../.."
 alias gst="git status"
 alias gaa="git add --all"
 alias gcmsg="git commit -m"
+alias fd="fdfind"
 
 alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
 alias h="ghci"
-
+alias nnvim="~/ThirdParty/nvim-nightly/nvim"
+alias vi="nnvim"
 
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
 	. $HOME/.zshrc_local
 fi
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
 
 
