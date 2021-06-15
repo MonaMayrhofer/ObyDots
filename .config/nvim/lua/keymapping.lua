@@ -4,4 +4,11 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<C-p>', ':FZF<Cr>')
+-- FZF Stuff
+map('n', '<S-p>', ':Buffers<Cr>')
+map('n', '<M-p>', ':Commands<Cr>')
+map('n', '<C-p>', ':Files<Cr>')
+map('n', '<C-f>', ':Rg<Cr>')
+
+-- Clear search
+map('n', '<C-h>', ':nohlsearch<Cr>')
