@@ -25,7 +25,6 @@ create-link-named() {
 }
 
 create-link .xsession
-create-link .xinitrc
 create-link .zshrc
 create-link .ghci
 create-link .profile
