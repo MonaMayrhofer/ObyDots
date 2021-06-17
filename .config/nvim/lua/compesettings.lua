@@ -1,5 +1,7 @@
 --------- COPIED STUFF --------
 -- COMPE FROM https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
+vim.o.completeopt = "menuone,noselect"
+
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
