@@ -44,7 +44,15 @@ vim.o.termguicolors = true
 vim.o.background="dark"
 vim.cmd[[colorscheme gruvbox-material]]
 
+--- Treesitter
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}
+
+vim.g.formatdef_rustfmt = '"rustfmt"'
+vim.g.formatters_rust = {'rustfmt'}
 
 -- RESOURCES:
 -- https://github.com/mjlbach/defaults.nvim/blob/master/init.lua
-
