@@ -29,7 +29,7 @@ require('.keymapping')
 ---- https://neovim.io/doc/user/lua.html#vim.o
 vim.wo.wrap = false
 vim.wo.number = true
-vim.wo.rnu = true
+-- vim.wo.rnu = true
 
 vim.o.signcolumn = "yes"
 

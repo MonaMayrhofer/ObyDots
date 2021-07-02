@@ -12,3 +12,6 @@ map('n', '<C-f>', ':Rg<Cr>')
 
 -- Clear search
 map('n', '<C-h>', ':nohlsearch<Cr>')
+
+
+vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
