@@ -14,4 +14,11 @@ map('n', '<C-f>', ':Rg<Cr>')
 map('n', '<C-h>', ':nohlsearch<Cr>')
 
 
+
+local cmd = vim.cmd
+
+----- AUTOCOMMANDS -----
+-- Automatic Format on Save...
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+vim.cmd([[ au BufWrite *.rs :Format ]])
 vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
