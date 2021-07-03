@@ -37,6 +37,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+
 vim.o.hidden = true --Do not force a save when switching buffers
 
 --- Configure Palette
@@ -53,6 +54,7 @@ require'nvim-treesitter.configs'.setup {
 
 vim.g.formatdef_rustfmt = '"rustfmt"'
 vim.g.formatters_rust = {'rustfmt'}
+
 
 -- RESOURCES:
 -- https://github.com/mjlbach/defaults.nvim/blob/master/init.lua

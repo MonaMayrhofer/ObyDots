@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+echo "LANGFFFAF: $LANG" >> ~/templog.txt
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -29,4 +31,3 @@ fi
 #Add Obydots-Path
 PATH="$HOME/.obydots/bin:$PATH"
 source "$HOME/.cargo/env"
-

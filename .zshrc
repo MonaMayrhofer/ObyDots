@@ -1,11 +1,13 @@
 fpath+=~/.zfunc
 
+source /etc/profile
+
 #/======= ZPLUG ===\=
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh, from:github, as:plugin
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zplug "agkozak/zsh-z", from:github
-zplug load
+ zplug load
 #\================/
 
 #/======= ASDF ===\=
@@ -28,8 +30,8 @@ alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
 alias h="ghci"
-alias nnvim="~/ThirdParty/nvim-nightly/nvim"
-alias vi="nnvim"
+# alias nnvim="~/ThirdParty/nvim-nightly/nvim"
+# alias vi="nnvim"
 
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
@@ -38,4 +40,9 @@ fi
 
 export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
 
-
+#Enable ZSH History
+export HISTFILE=~/.local/share/zsh/zsh_history
+export SAVEHIST=3000
+export HISTSIZE=2000
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
