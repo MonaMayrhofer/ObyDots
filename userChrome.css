@@ -1,0 +1,40 @@
+
+
+toolbox#navigator-toolbox {
+	display: block;
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	transform: translateY(-100%);
+	transition: 225ms transform cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition-delay: 1s;
+}
+
+toolbox#navigator-toolbox::after{
+	display: block;
+	position: absolute;
+	content: ' ';
+	height: 5px;
+	width: 100%;
+}
+toolbox#navigator-toolbox > * {
+	width: 100%;
+}
+
+toolbox#navigator-toolbox:focus-within,
+toolbox#navigator-toolbox:focus-visible,
+toolbox#navigator-toolbox:hover,
+body > box:hover > toolbox#navigator-toolbox
+{
+	overflow: visible;
+	transform: translateY(0);
+	transition-delay: 0s;
+	transition-duration: 195ms;
+	box-shadow: 0 0 10px 0 black;
+}
+
+body > box:hover > toolbox#navigator-toolbox {
+	transition-duration: 0ms;
+}
