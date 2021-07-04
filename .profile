@@ -31,3 +31,5 @@ fi
 #Add Obydots-Path
 PATH="$HOME/.obydots/bin:$PATH"
 source "$HOME/.cargo/env"
+
+EDITOR=/usr/bin/nvim

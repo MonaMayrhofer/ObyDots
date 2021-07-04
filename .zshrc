@@ -46,3 +46,9 @@ export SAVEHIST=3000
 export HISTSIZE=2000
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+
+source ~/.obydots/zshrc_keyfix.zsh
+
+# VIM IN ZSH WHUWW
+bindkey -v
+export KEYTIMEOUT=1
