@@ -15,6 +15,11 @@ paq {'junegunn/fzf', run = fn['fzf#install']} -- FZF
 paq {'junegunn/fzf.vim'} 		-- GUI for FZF
 paq {'ojroques/nvim-lspfuzzy'} 		-- FZF integration for lsp (go to implementations and such)
 paq {'sainnhe/gruvbox-material'}   	-- Theme
+
+--Git Stuff
+paq {'tpope/vim-fugitive'}
+paq {'airblade/vim-gitgutter'}
+
 g['deoplete#enable_at_startup'] = 1  -- enable deoplete at startup
 
 --- SETUP THESE PLUGINS YEE---
@@ -55,6 +60,9 @@ require'nvim-treesitter.configs'.setup {
 vim.g.formatdef_rustfmt = '"rustfmt"'
 vim.g.formatters_rust = {'rustfmt'}
 
+
+--- Vim Git Stff
+opt.updatetime=100 --gitgutter: run git status 100ms after :w
 
 -- RESOURCES:
 -- https://github.com/mjlbach/defaults.nvim/blob/master/init.lua

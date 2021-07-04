@@ -24,7 +24,6 @@ alias ...="cd ../.."
 alias gst="git status"
 alias gaa="git add --all"
 alias gcmsg="git commit -m"
-alias fd="fdfind"
 
 alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
@@ -38,7 +37,7 @@ if [[ -e "$HOME/.zshrc_local" ]]; then
 	. $HOME/.zshrc_local
 fi
 
-export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 #Enable ZSH History
 export HISTFILE=~/.local/share/zsh/zsh_history
