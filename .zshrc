@@ -28,8 +28,6 @@ alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
 alias h="ghci"
-alias nnvim="~/ThirdParty/nvim-nightly/nvim"
-alias vi="nnvim"
 
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
