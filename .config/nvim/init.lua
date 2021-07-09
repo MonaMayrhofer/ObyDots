@@ -16,7 +16,6 @@ paq {'junegunn/fzf.vim'} 		-- GUI for FZF
 paq {'ojroques/nvim-lspfuzzy'} 		-- FZF integration for lsp (go to implementations and such)
 paq {'sainnhe/gruvbox-material'}   	-- Theme
 
-paq {'habamax/vim-asciidoctor'}
 
 --Git Stuff
 paq {'tpope/vim-fugitive'}
