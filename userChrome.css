@@ -8,7 +8,7 @@ toolbox#navigator-toolbox {
 	left: 0;
 	right: 0;
 	transform: translateY(-100%);
-	transition: 225ms transform cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: 225ms transform cubic-bezier(0.4, 0.0, 0.2, 1), 100ms box-shadow;
 	transition-delay: 1s;
 }
 
@@ -32,7 +32,7 @@ body > box:hover > toolbox#navigator-toolbox
 	transform: translateY(0);
 	transition-delay: 0s;
 	transition-duration: 195ms;
-	box-shadow: 0 0 10px 0 black;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 body > box:hover > toolbox#navigator-toolbox {

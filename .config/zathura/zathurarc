@@ -1,0 +1,7 @@
+set completion-bg "#282828"
+set inputbar-bg "#282828"
+set tabbar-bg "#282828"
+set tabbar-focus-bg "#d65d0e"
+set default-bg "#282828"
+set statusbar-bg "#282828"
+set font "JetBrainsMono 8"
