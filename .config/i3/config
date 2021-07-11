@@ -41,6 +41,8 @@ bindsym $mod+Shift+q kill
 bindsym --release $mod+space exec rofi -show drun
 # start ranger (a program launcher)
 bindsym --release $mod+numbersign exec kitty ranger
+# start haskell ghci
+bindsym --release $mod+c exec kitty ghci
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
