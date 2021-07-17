@@ -47,7 +47,8 @@ export HISTSIZE=2000
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
-source ~/.obydots/zshrc_keyfix.zsh
+# Should be fixed by installing the terminfo extension for "xterm-kitty"
+# source ~/.obydots/zshrc_keyfix.zsh
 
 # VIM IN ZSH WHUWW
 bindkey -v

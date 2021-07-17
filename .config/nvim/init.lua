@@ -35,6 +35,9 @@ require('.compesettings')
 require('.keymapping')
 
 
+--- MarkdownPreview
+vim.g.mkdp_browser = 'firefox'
+
 ---- https://neovim.io/doc/user/lua.html#vim.o
 vim.wo.wrap = false
 vim.wo.number = true
