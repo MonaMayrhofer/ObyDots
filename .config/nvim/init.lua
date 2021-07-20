@@ -14,6 +14,7 @@ paq {'neovim/nvim-lspconfig'} 		-- Automagic configs for several lsps
 paq {'junegunn/fzf', run = fn['fzf#install']} -- FZF
 paq {'junegunn/fzf.vim'} 		-- GUI for FZF
 paq {'ojroques/nvim-lspfuzzy'} 		-- FZF integration for lsp (go to implementations and such)
+paq {'cohama/lexima.vim'}
 
 paq {'iamcco/markdown-preview.nvim', run ="cd app && npm install"}
 
