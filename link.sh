@@ -35,7 +35,8 @@ create-link-named thirdparty/asdf .asdf
 
 for confdir in ${SCRIPTDIR}/.config/*
 do
-	create-link ".config/$(basename ${confdir})"
+	path=".config/$(basename ${confdir})"
+	create-link "$path" "$path"
 done
 
 echo "userChrome.css (firefox theme) is not yet automatically linked. Please symlink it to ~/.mozilla/firefox/[DEFAULT-FOLDER]/chrome/userChrome.css. Where the DEFAULT-FOLDER is your current folder. Get its location at about:support in firefox."

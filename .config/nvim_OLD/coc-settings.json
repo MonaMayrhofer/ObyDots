@@ -1,4 +1,0 @@
-{
-	"coc.preferences.formatOnSaveFiletypes": ["rust"],
-	"rust-analyzer.serverPath": "/home/obyoxar/ThirdParty/rust-analyzer/rust-analyzer-linux"
-}
