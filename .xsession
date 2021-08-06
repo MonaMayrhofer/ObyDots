@@ -14,4 +14,6 @@ if [ -d "$PROFILE_DIR" ]; then
 fi
 
 systemd-cat -t "OBY .xsession" echo "Time for i3. LETS GOOOO"
+
+udiskie &
 exec i3 --shmlog-size=26214400

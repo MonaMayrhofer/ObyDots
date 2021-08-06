@@ -14,6 +14,7 @@ paq {'neovim/nvim-lspconfig'} 		-- Automagic configs for several lsps
 paq {'junegunn/fzf.vim'} 		-- GUI for FZF
 paq {'ojroques/nvim-lspfuzzy'} 		-- FZF integration for lsp (go to implementations and such)
 paq {'cohama/lexima.vim'}
+paq {'phaazon/hop.nvim'}
 
 paq {'iamcco/markdown-preview.nvim', run ="cd app && npm install"}
 
@@ -21,13 +22,19 @@ paq {'sainnhe/gruvbox-material'}   	-- Theme
 
 
 --Git Stuff
-paq {'tpope/vim-fugitive'}
+paq {'tpope/vim-fugitive'} --Replace with https://github.com/TimUntersberger/neogit
 paq {'airblade/vim-gitgutter'}
 
+-----------------------------------------------------------
+-- TODO: hop.nvim Shortcuts
+--
 g['deoplete#enable_at_startup'] = 1  -- enable deoplete at startup
 
+
 --- SETUP THESE PLUGINS YEE---
-require('lspfuzzy').setup{}
+require('lspfuzzy').setup{
+	methods='all'
+}
 
 require('.lsp')
 require('.compesettings')
