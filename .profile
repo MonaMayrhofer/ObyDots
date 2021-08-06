@@ -31,8 +31,14 @@ if [ -d "$HOME/.obydots/bin" ] ; then
 	PATH="$HOME/.obydots/bin:$PATH"
 fi
 
-if [ -d "$HOM/.cargo/env" ] ; then
+if [ -d "$HOME/.cargo/env" ] ; then
 	source "$HOME/.cargo/env"
 fi
 
-EDITOR=/usr/bin/nvim
+if [ -d "$HOME/.cargo/bin" ] ; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+
+export TERMINAL=kitty
+export EDITOR=/usr/bin/nvim

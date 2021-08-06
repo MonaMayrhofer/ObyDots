@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+journalctl -u battery-monitor.service | awk '{OFS="\t"} /power-graph/{print $6,$7}'

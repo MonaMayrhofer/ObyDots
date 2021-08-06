@@ -45,9 +45,17 @@ format = <label>
 label =  %date%   %time%
 
 [module/backlight]
-type = internal/backlight
-card = intel_backlight
+; type = internal/backlight
+; card = intel_backlight
+; enable-scroll = true
+type = internal/xbacklight
 enable-scroll = true
+format = <label> <ramp>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
 
 [module/i3]
 label-mode=[%mode%]
@@ -129,9 +137,10 @@ time-format = %H:%M
 format-charging = [<label-charging> <ramp-capacity>]
 label-charging = %time%
 
-format-discharging = [<label-discharging> <bar-capacity>]
+format-discharging = <label-discharging> [<bar-capacity>]
 ;format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = (%time%)
+;label-discharging = (%time%)
+label-discharging = %percentage%%
 
 format-full = <label-full>
 label-full = Fully charged

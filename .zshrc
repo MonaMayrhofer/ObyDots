@@ -3,7 +3,7 @@ fpath+=~/.zfunc
 source /etc/profile
 
 #/======= ZPLUG ===\=
-source ~/.zplug/init.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh, from:github, as:plugin
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zplug "agkozak/zsh-z", from:github
@@ -11,7 +11,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 #\================/
 
 #/======= ASDF ===\=
-. ~/.asdf/asdf.sh
+source /opt/asdf-vm/asdf.sh
 #\================/
 
 eval "$(starship init zsh)"
@@ -27,6 +27,7 @@ alias gcmsg="git commit -m"
 alias gl="git log --graph --oneline --all --decorate"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias x="exa -l"
 
 alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"

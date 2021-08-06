@@ -11,7 +11,6 @@ paq {'savq/paq-nvim', opt = true}    	-- paq-nvim manages itself
 paq {'hrsh7th/nvim-compe'} 		-- autocompletion	
 paq {'nvim-treesitter/nvim-treesitter'} -- something with hightlighting i guess?
 paq {'neovim/nvim-lspconfig'} 		-- Automagic configs for several lsps
-paq {'junegunn/fzf', run = fn['fzf#install']} -- FZF
 paq {'junegunn/fzf.vim'} 		-- GUI for FZF
 paq {'ojroques/nvim-lspfuzzy'} 		-- FZF integration for lsp (go to implementations and such)
 paq {'cohama/lexima.vim'}
