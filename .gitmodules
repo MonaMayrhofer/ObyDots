@@ -7,3 +7,6 @@
 [submodule "thirdparty/asdf"]
 	path = thirdparty/asdf
 	url = https://github.com/asdf-vm/asdf.git
+[submodule ".config/ranger/plugins/zoxide"]
+	path = .config/ranger/plugins/zoxide
+	url = git@github.com:jchook/ranger-zoxide.git

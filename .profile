@@ -44,5 +44,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
+export STARSHIP_CONFIG=~/.config/starship/config.toml
 export TERMINAL=kitty
 export EDITOR=/usr/bin/nvim

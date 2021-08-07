@@ -15,6 +15,7 @@ source /opt/asdf-vm/asdf.sh
 #\================/
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 alias ll="ls -lAh --color"
 alias ls="ls --color"

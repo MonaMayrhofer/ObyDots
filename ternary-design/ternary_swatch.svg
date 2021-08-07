@@ -30,9 +30,9 @@
      inkscape:lockguides="false"
      units="px"
      width="1920px"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="473.40799"
-     inkscape:cy="549.42197"
+     inkscape:zoom="0.25"
+     inkscape:cx="738"
+     inkscape:cy="-128"
      inkscape:window-width="1888"
      inkscape:window-height="1023"
      inkscape:window-x="14"
@@ -381,42 +381,49 @@
        x="26.458332"
        y="132.29167" />
     <rect
-       style="fill:#41403f;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#7c7673;stroke:#000000;stroke-width:0.264998;stroke-opacity:1"
+       id="rect2313-3-3"
+       width="26.458002"
+       height="26.458334"
+       x="26.458332"
+       y="158.75" />
+    <rect
+       style="fill:#32312f;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2315"
        width="26.458332"
        height="26.458332"
        x="79.375"
        y="132.29167" />
     <rect
-       style="fill:#4d4c4b;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#3d3b39;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2317"
        width="26.458332"
        height="26.458332"
        x="105.83333"
        y="132.29167" />
     <rect
-       style="fill:#898584;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#9b8e8b;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2317-3"
        width="26.458332"
        height="26.458332"
        x="52.916664"
        y="158.75" />
     <rect
-       style="fill:#a29c9b;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#b2a2a0;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2317-6"
        width="26.458334"
        height="26.458332"
        x="79.375"
        y="158.75" />
     <rect
-       style="fill:#bab3b2;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#cebdba;stroke:#000000;stroke-width:0.264999;stroke-opacity:1;fill-opacity:1"
        id="rect2317-7"
        width="26.458334"
        height="26.458332"
        x="105.83334"
        y="158.75" />
     <rect
-       style="fill:#eae1df;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#e7dddb;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2317-5"
        width="26.458334"
        height="26.458332"
@@ -430,14 +437,14 @@
        x="158.75003"
        y="158.75" />
     <rect
-       style="fill:#595756;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#4d4b4a;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2317-67"
        width="26.458332"
        height="26.458332"
        x="132.29169"
        y="132.29167" />
     <rect
-       style="fill:#716e6d;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
+       style="fill:#555251;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2317-53"
        width="26.458332"
        height="26.458332"
@@ -452,7 +459,7 @@
        y="0"><tspan
          x="4.0001228"
          y="224.75413"
-         id="tspan90474">Normal</tspan></text>
+         id="tspan21182">Normal</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.06897556,33.418776)"
@@ -462,7 +469,7 @@
        y="0"><tspan
          x="52.000061"
          y="224.75413"
-         id="tspan90476">Dim</tspan></text>
+         id="tspan21184">Dim</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.23830896,86.006455)"
@@ -472,7 +479,7 @@
        y="0"><tspan
          x="36.000082"
          y="224.75413"
-         id="tspan90478">Dark</tspan></text>
+         id="tspan21186">Dark</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,42.884754,88.089554)"
@@ -482,7 +489,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90480">0</tspan></text>
+         id="tspan21188">0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,66.536396,88.734665)"
@@ -492,7 +499,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90482">1</tspan></text>
+         id="tspan21190">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,93.458735,87.833997)"
@@ -502,7 +509,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90484">2</tspan></text>
+         id="tspan21192">2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,119.02823,88.86399)"
@@ -512,7 +519,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90486">3</tspan></text>
+         id="tspan21194">3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,148.79462,89.021748)"
@@ -522,7 +529,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90488">4</tspan></text>
+         id="tspan21196">4</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,68.050107,115.99514)"
@@ -532,7 +539,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90490">3</tspan></text>
+         id="tspan21198">3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,93.608578,116.01865)"
@@ -542,7 +549,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90492">2</tspan></text>
+         id="tspan21200">2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,119.67667,116.89651)"
@@ -552,7 +559,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90494">1</tspan></text>
+         id="tspan21202">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,145.6787,116.14244)"
@@ -562,7 +569,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90496">0</tspan></text>
+         id="tspan21204">0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,39.649472,116.06236)"
@@ -572,7 +579,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan90498">4</tspan></text>
+         id="tspan21206">4</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,0.05802444,-16.59306)"
@@ -582,7 +589,7 @@
        y="0"><tspan
          x="4.0001228"
          y="224.75413"
-         id="tspan90500">Bright</tspan></text>
+         id="tspan21208">Bright</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:1.25;font-family:'JetBrainsMonoMedium NF';-inkscape-font-specification:'JetBrainsMonoMedium NF, Normal';stroke-width:0.264583"
@@ -594,6 +601,17 @@
          style="font-size:7.05556px;stroke-width:0.264583"
          x="5.3497305"
          y="171.37927">Light</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.99722px;line-height:1.25;font-family:'JetBrainsMonoMedium NF';-inkscape-font-specification:'JetBrainsMonoMedium NF, Normal';stroke-width:0.264583;fill:#282828"
+       x="31.078217"
+       y="174.71321"
+       id="text58838-3"><tspan
+         sodipodi:role="line"
+         id="tspan58836-6"
+         style="font-size:5.99722px;fill:#282828;stroke-width:0.264583"
+         x="31.078217"
+         y="174.71321">Gray</tspan></text>
     <g
        id="g67379"
        transform="translate(-52.916701)">
@@ -633,5 +651,16 @@
          x="264.58334"
          y="132.29167" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:5.99722px;line-height:1.25;font-family:'JetBrainsMonoMedium NF';-inkscape-font-specification:'JetBrainsMonoMedium NF, Normal';stroke-width:0.264583;fill:#f9f5f0"
+       x="27.134445"
+       y="151.97984"
+       id="text5570"><tspan
+         sodipodi:role="line"
+         id="tspan5568"
+         style="font-size:5.99722px;stroke-width:0.264583;fill:#f9f5f0"
+         x="27.134445"
+         y="151.97984">Darkest</tspan></text>
   </g>
 </svg>

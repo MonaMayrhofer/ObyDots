@@ -1,0 +1,3 @@
+format = """
+[┌─](bold green)$directory$rust$package
+[└─>](bold green) """
