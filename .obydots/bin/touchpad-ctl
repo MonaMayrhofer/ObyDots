@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+LIB_FILE=$(obydots-profile-file touchpad-interface.sh)
+
+if [[ -f $LIB_FILE ]]; then
+	source $LIB_FILE
+else
+	echo "Your profile does not provide: $LIB_FILE"
+	exit 1
+fi
+
+while [[ $# -gt 0 ]]; do
+	case $1 in
+		"-t"|"--toggle")
+			touchpad-toggle
+			;;
+		*)
+			echo "Unrecognized parameter: $1"
+	esac
+	shift
+done
+
+

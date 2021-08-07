@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "$HOME/.obydots/profiles/$(cat /etc/hostname)/$1"

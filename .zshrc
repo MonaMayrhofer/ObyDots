@@ -14,6 +14,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 source /opt/asdf-vm/asdf.sh
 #\================/
 
+#/======= NNN =====\
+[[ -e ~/.config/nnn/obydots-nnn-config.sh ]] && source ~/.config/nnn/obydots-nnn-config.sh
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
