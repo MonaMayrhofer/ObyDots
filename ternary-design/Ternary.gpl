@@ -1,6 +1,6 @@
 GIMP Palette
 Name: Ternary
-Columns: 8
+Columns: 12
 #
 240  84  79	Red
 160 199  92	Green
@@ -26,11 +26,15 @@ Columns: 8
  98 179 160	Aqua_Light
 212 162 135	Orange_Light
 171 196 208	Creme_Light
- 25  25  25	Untitled
- 40  40  40	Untitled
- 65  64  63	Untitled
- 89  87  86	Untitled
-137 133 132	Untitled
-162 156 155	Untitled
-234 225 223	Untitled
-249 245 240	Untitled
+ 24  24  24	darkest
+ 40  40  40	dark0
+ 50  49  47	dark1
+ 61  59  57	dark2
+ 77  75  74	dark3
+ 85  82  81	dark4
+ 96  94  93	gray
+161 157 156	light4
+176 170 169	light3
+198 191 190	light2
+227 223 222	light1
+249 245 240	light0

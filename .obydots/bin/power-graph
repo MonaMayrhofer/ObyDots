@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DATE=$(date +%d.%m.%Y-%H:%k:%S)
+DATE=$(date +%d.%m.%Y-%H:%M:%S)
 POWER=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage:/ {print $2}')
 
 echo "${DATE}; ${POWER}"
