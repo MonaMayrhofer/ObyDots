@@ -18,7 +18,7 @@ paq {'phaazon/hop.nvim'}
 
 paq {'iamcco/markdown-preview.nvim', run ="cd app && npm install"}
 
-paq {'sainnhe/gruvbox-material'}   	-- Theme
+-- paq {'sainnhe/gruvbox-material'}   	-- Theme
 
 
 --Git Stuff
@@ -62,7 +62,7 @@ vim.o.hidden = true --Do not force a save when switching buffers
 --- Configure Palette
 vim.o.termguicolors = true
 vim.o.background="dark"
-vim.cmd[[colorscheme gruvbox-material]]
+-- vim.cmd[[colorscheme gruvbox-material]]
 
 --- Treesitter
 require'nvim-treesitter.configs'.setup {

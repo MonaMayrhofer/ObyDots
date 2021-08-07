@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+SET_TO=""
+STATE_FILE="$HOME/.local/share/obydots/is-zen-mode"
+
+while [[ $# -gt 0 ]]; do
+	case $1 in
+	"--help"|"-h") echo "Help not yet written :) Hihihi"
+		exit 1
+		;;
+	"--set"|"-s")
+		shift
+		case $1 in
+		"true") SET_TO=true
+			;;
+		"false") SET_TO=false
+			;;
+		*)
+			echo "--set must either be true or false"
+			exit 1
+			;;
+		esac
+		;;
+	esac
+	shift
+done
+
+if [[ "$SET_TO" = "" ]]; then
+	echo "Toggle Zen"
+	
+	CURRENT="false"
+	[[ -f "$STATE_FILE" ]] && CURRENT=$(cat "$STATE_FILE")
+
+	echo $CURRENT
+	case "$CURRENT" in
+		"false") SET_TO=true	
+			;;
+		*)
+			SET_TO=false
+			;;
+	esac
+fi
+
+echo "Set zen to ${SET_TO}"
+
+# DO THE ACTUAL TOGGLING
+if [[ "$SET_TO" = "true" ]]; then
+	echo "TRUE"
+	hsetroot -solid "#191919"
+	polybar-msg cmd hide
+elif [[ "$SET_TO" = "false" ]]; then
+	echo "FALSE"
+	hsetroot -cover "$HOME/obydots/ternary-design/background.png"
+	polybar-msg cmd show
+else
+	echo "Could not determine state to zen to. (SET_TO = $SET_TO)"
+	exit 1
+fi
+
+# SET_TO is either true or false
+mkdir -p $(dirname "$STATE_FILE")
+echo "$SET_TO" > "$STATE_FILE"
+
+exit 0
