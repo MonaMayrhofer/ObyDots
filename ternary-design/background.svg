@@ -28,15 +28,15 @@
      showgrid="false"
      units="px"
      width="1920px"
-     inkscape:zoom="0.33148636"
-     inkscape:cx="1030.2083"
-     inkscape:cy="797.92122"
+     inkscape:zoom="0.4687925"
+     inkscape:cx="1110.2993"
+     inkscape:cy="642.07511"
      inkscape:window-width="1888"
-     inkscape:window-height="1028"
+     inkscape:window-height="1023"
      inkscape:window-x="14"
-     inkscape:window-y="34"
+     inkscape:window-y="39"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g21963"
+     inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true" />
   <defs
@@ -305,8 +305,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="Background"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <rect
        style="fill:#191919;fill-opacity:1;stroke:none;stroke-width:0.263326"
        id="rect20353"
@@ -318,7 +317,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Front">
+     inkscape:label="Front"
+     sodipodi:insensitive="true">
     <g
        id="g21963"
        clip-path="url(#clipPath21965)">

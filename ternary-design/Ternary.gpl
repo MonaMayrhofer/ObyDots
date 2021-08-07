@@ -1,14 +1,36 @@
 GIMP Palette
 Name: Ternary
-Columns: 5
+Columns: 8
 #
-252 244  49	Lemon
-144 127 140	Mountbatten Pink
- 68  59 191	Ocean Blue
-252 153  53	Deep Saffron
-252  61  57	Tart Orange
-157  89 210	Amethyst
- 40  40  40	Eerie Black
-249 245 240	Floral White
- 91 177  62	Green RYB
- 87 250 204	Sea Green Crayola
+240  84  79	Red
+160 199  92	Green
+252 244  49	Yellow
+  0 121 145	Blue
+157  89 210	Violet
+ 67 154 134	Aqua
+206 137 100	Orange
+147 181 198	Blue_Alt
+221  36  30	Red_Dim
+127 163  63	Green_Dim
+221 214  14	Yellow_Dim
+  6  89 106	Blue_Dim
+125  58 177	Violet_Dim
+ 56 115 101	Aqua_Dim
+175 103  63	Orange_Dim
+106 150 171	Creme_Dim
+237 126 122	Red_Light
+178 206 129	Green_Light
+245 240  98	Yellow_Light
+ 11 173 205	Violet_Light
+177 129 214	Purple_Light
+ 98 179 160	Aqua_Light
+212 162 135	Orange_Light
+171 196 208	Creme_Light
+ 25  25  25	Untitled
+ 40  40  40	Untitled
+ 65  64  63	Untitled
+ 89  87  86	Untitled
+137 133 132	Untitled
+162 156 155	Untitled
+234 225 223	Untitled
+249 245 240	Untitled

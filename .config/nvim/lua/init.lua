@@ -15,6 +15,8 @@ paq {'junegunn/fzf.vim'} 		-- GUI for FZF
 paq {'ojroques/nvim-lspfuzzy'} 		-- FZF integration for lsp (go to implementations and such)
 paq {'cohama/lexima.vim'}
 paq {'phaazon/hop.nvim'}
+paq {'norcalli/nvim-colorizer.lua'}
+
 
 paq {'iamcco/markdown-preview.nvim', run ="cd app && npm install"}
 
@@ -29,7 +31,6 @@ paq {'airblade/vim-gitgutter'}
 -- TODO: hop.nvim Shortcuts
 --
 g['deoplete#enable_at_startup'] = 1  -- enable deoplete at startup
-
 
 --- SETUP THESE PLUGINS YEE---
 require('lspfuzzy').setup{
@@ -63,6 +64,9 @@ vim.o.hidden = true --Do not force a save when switching buffers
 vim.o.termguicolors = true
 vim.o.background="dark"
 -- vim.cmd[[colorscheme gruvbox-material]]
+
+
+require('colorizer').setup{}
 
 --- Treesitter
 require'nvim-treesitter.configs'.setup {

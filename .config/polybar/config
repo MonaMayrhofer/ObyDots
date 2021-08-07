@@ -11,25 +11,23 @@ ternary-fg-alt=#00ff00
 ternary-orange=#9d59d2
 ternary-blue=#443BBF
 
-fg-left-primary=#282828
-fg-left-accent=#282828
+fg-left-primary=#9d59d2
+fg-left-accent=#fcf431
 
-bg-left-primary=#9d59d2
-bg-left-accent=#FCF431
+bg-left-primary=transparent
+bg-left-accent=transparent
 system-bg-left=#282828
 
 
 [bar/top]
-monitor=
 bottom=false
-
 background=#0000
 
-foreground=#282828
+foreground=#eae1df
 locale=de_AT.UTF-8
 
 tray-foreground=#fff
-tray-background=${colors.ternary-bg}
+tray-background=#0000
 tray-position=right
 
 #font-?=FONTNAME:modifiers;vertical-offset
@@ -38,42 +36,20 @@ height=20
 
 enable-ipc=true
 
-# modules-left=i3 text-workspace-end title
 modules-left=i3 title
 modules-center=datetime
 modules-right=backlight pulseaudio battery text-tray-end scblank dunst
 
-[global/wm]
-margin-top= 10
-
-
-[module/datetime]
-type = internal/date
-date = %a %d %b %Y
-time = %H:%M:%S
-
-format = <label>
-label =  %date%   %time%
-
-[module/backlight]
-; type = internal/backlight
-; card = intel_backlight
-; enable-scroll = true
-type = internal/xbacklight
-enable-scroll = true
-format = <label> <ramp>
-label = %percentage%%
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-
+border-top-size=5
+border-top-color=transparent
+border-bottom-color=transparent
 
 [module/i3]
 type=internal/i3
 
 label-mode=" %mode% "
 label-mode-padding=1
-label-mode-background=${colors.bg-left}
+label-mode-background=transparent
 label-mode-foreground=${colors.fg-left-primary}
 enable-click=true
 
@@ -82,9 +58,6 @@ label-unfocused =" %index% "
 
 label-focused-foreground=${colors.fg-left-accent}
 label-unfocused-foreground=${colors.fg-left-primary}
-
-label-focused-background=${colors.bg-left-accent}
-label-unfocused-background=${colors.bg-left-primary}
 
 # ws-icon-0="10:discord;0:ﭮ "
 # ws-icon-1="1;1"
@@ -123,62 +96,29 @@ label-unfocused-background=${colors.bg-left-primary}
 # label-visible-background=${colors.ternary-bg}
 # label-visible-foreground=${colors.ternary-orange}
 
-[module/text-workspace-end]
-content-background=${colors.fg-left-primary}
-content-foreground=${colors.bg-left-primary}
-inherit=preset/text-tray
-content=" "
+[module/title]
+type = internal/xwindow
+format = <label>
+format-padding = 1
+label = %title%
+label-maxlen = 20
+label-empty = 
 
-[preset/text-tray]
-type=custom/text
-content-foreground=${colors.right-system-bg}
-content-background=${colors.ternary-bg}
+[module/datetime]
+type = internal/date
+date = %a %d %b %Y
+time = %H:%M:%S
+format = <label>
+label =  %date%   %time%
 
-[module/text-tray-end]
-inherit=preset/text-tray
-content=" "
-
-
-[module/battery]
-type = internal/battery
-; This is useful in case the battery never reports 100% charge
-full-at = 99
-; Use the following command to list batteries and adapters:
-; $ ls -1 /sys/class/power_supply/
-battery = BAT0
-adapter = AC
-; If an inotify event haven't been reported in this many
-; seconds, manually poll for new values.
-poll-interval = 10
-
-format-discharging-padding = 2
-format-charging-padding = 2
-
-time-format = %H:%M
-
-format-charging = [<label-charging> <ramp-capacity>]
-label-charging = %time%
-
-format-discharging = <label-discharging> [<bar-capacity>]
-;format-discharging = <ramp-capacity> <label-discharging>
-;label-discharging = (%time%)
-label-discharging = %percentage%%
-
-format-full = <label-full>
-label-full = Fully charged
-
-; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
-
-; Only applies if <bar-capacity> is used
-bar-capacity-width = 6
-bar-capacity-empty = " "
-bar-capacity-fill = " "
-bar-capacity-indicator = "ﯜ "
+[module/backlight]
+type = internal/xbacklight
+enable-scroll = true
+format = <label> <ramp>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -200,32 +140,47 @@ ramp-volume-2 = "墳"
 ; Right and Middle click
 click-right = pavucontrol
 
-[module/title]
-type = internal/xwindow
-format = <label>
-format-padding = 1
-label = %title%
-label-maxlen = 20
-label-empty = 
+[module/battery]
+type = internal/battery
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+poll-interval = 60
+
+format-discharging-padding = 2
+format-charging-padding = 2
+
+time-format = %H:%M
+
+format-charging = [<label-charging> <ramp-capacity>]
+label-charging = %time%
+
+format-discharging = <label-discharging> [<bar-capacity>]
+label-discharging = %percentage%%
+
+format-full = <label-full>
+label-full = Fully charged
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+bar-capacity-width = 6
+bar-capacity-empty = " "
+bar-capacity-fill = " "
+bar-capacity-indicator = "ﯜ "
 
 [module/scblank]
 type = custom/script
 format-padding=1
-format-foreground=${colors.ternary-fg}
-format-background=${colors.ternary-bg}
 exec=pb-screenblank
 tail = true
-# click-left = kill -USR1 %pid%
 click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-
 
 [module/dunst]
 type = custom/ipc
 initial = 1
 format-padding=1
-format-foreground=${colors.ternary-fg}
-format-background=${colors.ternary-bg}
-
 hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:} %{A}" &
 hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:} %{A}" &
-
