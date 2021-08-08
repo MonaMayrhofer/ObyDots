@@ -1,0 +1,217 @@
+/* vim:ft=css
+*/
+
+/*
+ * Many things shamelessly stolen from Gruvbox theme
+ */
+
+* {
+    /* Theme settings */
+    highlight: bold italic;
+    scrollbar: true;
+
+    tern-darkest: #181818;
+    tern-dark0: #282828;
+    tern-dark1: #32312f;
+    tern-dark2: #3d3b39;
+    tern-dark3: #4d4b4a;
+    tern-dark4: #555251;
+    tern-gray: #7c7673;
+    tern-light0: #f9f5f0;
+    tern-light1: #e7dddb;
+    tern-light2: #cebdba;
+    tern-light3: #b2a2a0;
+    tern-light4: #9b8e8b;
+    
+    tern-bright-red: #ED7E7A;
+    tern-bright-green: #B2CE81;
+    tern-bright-yellow: #F5F062;
+    tern-bright-blue: #0BADCD;
+    tern-bright-purple: #B181D6;
+    tern-bright-aqua: #62B3A0;
+    tern-bright-orange: #D4A287;
+    tern-neutral-red: #F0544F;
+    tern-neutral-green: #A0C75C;
+    tern-neutral-yellow: #FCF431;
+    tern-neutral-blue: #007991;
+    tern-neutral-purple: #9D59D2;
+    tern-neutral-aqua: #439A86;
+    tern-neutral-orange: #CE8964;
+    tern-dim-red: #dd241e;
+    tern-dim-green: #7fa33f;
+    tern-dim-yellow: #ddd60e;
+    tern-dim-blue: #06596a;
+    tern-dim-purple: #7d3ab1;
+    tern-dim-aqua: #387365;
+    tern-dim-orange: #af673f;
+    
+
+    tern-background: @tern-dark0;
+    tern-background-light: @tern-dark1;
+    tern-background-lighter: @tern-dark2;
+    tern-foreground: @tern-light0;
+
+    /* Theme colors */
+    background:                  @tern-darkest;
+    background-color:            @background;
+    foreground:                  @tern-foreground;
+    border-color:                @tern-neutral-purple;
+    separatorcolor:              @tern-neutral-purple;
+    scrollbar-handle:            @tern-neutral-yellow; /*TODO?*/
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+
+    selected-normal-background:  @tern-dark0;
+    selected-normal-foreground:  @tern-neutral-yellow;
+    active-background:           @gruvbox-dark-yellow-dark;
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @gruvbox-dark-yellow-light;
+    selected-active-foreground:  @active-foreground;
+
+    urgent-background:           @gruvbox-dark-red-dark;
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @gruvbox-dark-red-light;
+    selected-urgent-foreground:  @urgent-foreground;
+}
+
+
+/* ==========================================================================
+   File: gruvbox-common.rasi
+   Desc: Shared rules between all gruvbox themes
+   Author: bardisty <b@bah.im>
+   Source: https://github.com/bardisty/gruvbox-rofi
+   Modified: Mon Feb 12 2018 06:06:47 PST -0800
+   ========================================================================== */
+
+window {
+    background-color: @background;
+    border:           2;
+    padding:          0;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+    padding:      1px;
+}
+
+textbox {
+    highlight:  @highlight;
+    text-color: @foreground;
+}
+
+listview {
+    border:       2px solid 0 0;
+    padding:      2px 0 0;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    @scrollbar;
+}
+
+element {
+    border:  0;
+    padding: 2px;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @scrollbar-handle;
+    handle-width: 4px;
+    padding:      0;
+}
+
+sidebar {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ":";
+    text-color: @normal-foreground;
+    margin:     0 0.3em 0 0;
+}
+
+
+
+
+
+

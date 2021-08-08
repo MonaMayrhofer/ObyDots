@@ -46,7 +46,7 @@ echo "Set zen to ${SET_TO}"
 # DO THE ACTUAL TOGGLING
 if [[ "$SET_TO" = "true" ]]; then
 	echo "TRUE"
-	hsetroot -solid "#191919"
+	hsetroot -solid "#181818"
 	polybar-msg cmd hide
 elif [[ "$SET_TO" = "false" ]]; then
 	echo "FALSE"

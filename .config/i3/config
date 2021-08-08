@@ -195,8 +195,10 @@ set $background_color #9D59D2
 # exec_always --no-startup-id hsetroot -cover "$HOME/obydots/ternary-design/background.png"
 exec_always --no-startup-id zen-toggle --set false
 
-set $w_bord_col #fcf431
-set $w_indicator #fe8019
+# set $w_bord_col #fcf431
+# set $w_indicator #9d59d2ff
+set $w_indicator #fcf431
+set $w_bord_col #9d59d2ff
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $w_bord_col $w_bord_col #ffffff $w_indicator $w_bord_col 

@@ -1,3 +1,8 @@
 format = """
-[┌─](bold green)$directory$rust$package
-[└─>](bold green) """
+$all
+"""
+
+[character]
+vicmd_symbol="[-<](bold yellow)"
+success_symbol="[->](bold yellow)"
+error_symbol="[->](bold red)"

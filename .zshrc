@@ -10,6 +10,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
  zplug load
 #\================/
 
+source ~/.obydots/lib/zsh-styles.zsh
+
 #/======= ASDF ===\=
 source /opt/asdf-vm/asdf.sh
 #\================/
