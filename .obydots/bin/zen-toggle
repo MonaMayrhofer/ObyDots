@@ -26,12 +26,9 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "$SET_TO" = "" ]]; then
-	echo "Toggle Zen"
-	
 	CURRENT="false"
 	[[ -f "$STATE_FILE" ]] && CURRENT=$(cat "$STATE_FILE")
 
-	echo $CURRENT
 	case "$CURRENT" in
 		"false") SET_TO=true	
 			;;
@@ -43,14 +40,19 @@ fi
 
 echo "Set zen to ${SET_TO}"
 
+
+IMAGE_ROOT="$HOME/obydots/ternary-design"
+
+source $(obydots-profile-file background-profiles.sh)
+
 # DO THE ACTUAL TOGGLING
 if [[ "$SET_TO" = "true" ]]; then
-	echo "TRUE"
-	hsetroot -solid "#181818"
+	notify-send -u low -t 500 -a "Zen Mode" "enabled"
+	setroot --blank-color '#181818'
 	polybar-msg cmd hide
 elif [[ "$SET_TO" = "false" ]]; then
-	echo "FALSE"
-	hsetroot -cover "$HOME/obydots/ternary-design/background.png"
+	notify-send -u low -t 500 -a "Zen Mode" "disabled"
+	setroot-backgrounds #Loaded from background-profiles.sh
 	polybar-msg cmd show
 else
 	echo "Could not determine state to zen to. (SET_TO = $SET_TO)"

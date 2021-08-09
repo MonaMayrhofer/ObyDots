@@ -1,3 +1,35 @@
 #!/usr/bin/env bash
 
-echo "$HOME/.obydots/profiles/$(cat /etc/hostname)/$1"
+DO_ERROR="true"
+
+if [[ $# -lt 1 ]]; then
+	echo "Please specify at least one argument (the file)"
+	exit 1
+fi
+
+while [[ $# -gt 1 ]]; do
+	case $1 in 
+		"--help"|"-h")
+			echo "Help is not yet implemented :)"
+			exit 1
+			;;
+		"--no-warning"|"-n")
+			DO_ERROR="false"
+			;;
+		*)
+			echo "Unrecognized argument: $1"
+			exit 1
+			;;
+	esac
+	shift
+done
+
+FILE="$HOME/.obydots/profiles/$(cat /etc/hostname)/$1"
+
+if [[ "$DO_ERROR" = "true" ]]; then
+	if [[ ! -e "$FILE" ]]; then
+		notify-send -u critical "ObyDots profile file not found" "Your configuration does not provide '$FILE'"
+	fi
+fi
+
+echo $FILE

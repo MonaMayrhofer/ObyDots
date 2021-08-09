@@ -32,6 +32,7 @@ create-link-named .profile .zprofile
 create-link .obydots
 create-link-named thirdparty/zplug .zplug
 create-link-named thirdparty/asdf .asdf
+create-link-named ternary-design .obydots/ternary-design
 
 for confdir in ${SCRIPTDIR}/.config/*
 do
