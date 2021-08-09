@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+notify-send -h string:synchronous:true -u normal -a "ObyDots" "Force Focus" "Select window"
+
 WINDOW_ID=$(xwininfo -wm | grep -oP 'xwininfo: Window id: \K(0x[0-9a-f]+)')
 echo "Operating on $WINDOW_ID"
+
 
 PROPERTY=$(xprop -id $WINDOW_ID -notype -f KEEP_OPAQUE 8s '=$0\n' KEEP_OPAQUE | grep -oP 'KEEP_OPAQUE="\K(\w+)')
 
@@ -10,9 +13,11 @@ echo $PROPERTY
 if [[ "$PROPERTY" = "true" ]]; then
 	echo "Disabling..."
 	xprop -id $WINDOW_ID -format KEEP_OPAQUE 8s -remove KEEP_OPAQUE
+	notify-send -h string:synchronous:true -u low -a "ObyDots" "Force Focus" "Disabled force focus for $WINDOW_ID"
 else
 	echo "Enabling..."
 	xprop -id $WINDOW_ID -format KEEP_OPAQUE 8s -set KEEP_OPAQUE "true"
+	notify-send -h string:synchronous:true -u low -a "ObyDots" "Force Focus" "Enabled force focus for $WINDOW_ID"
 fi
 
 # xprop -id $WINDOW_ID

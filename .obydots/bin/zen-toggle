@@ -47,11 +47,11 @@ source $(obydots-profile-file background-profiles.sh)
 
 # DO THE ACTUAL TOGGLING
 if [[ "$SET_TO" = "true" ]]; then
-	notify-send -u low -t 500 -a "Zen Mode" "enabled"
+	notify-send -h string:synchronous:true -u low -t 500 -a "Zen Mode" "enabled"
 	setroot --blank-color '#181818'
 	polybar-msg cmd hide
 elif [[ "$SET_TO" = "false" ]]; then
-	notify-send -u low -t 500 -a "Zen Mode" "disabled"
+	notify-send -h string:synchronous:true -u low -t 500 -a "Zen Mode" "disabled"
 	setroot-backgrounds #Loaded from background-profiles.sh
 	polybar-msg cmd show
 else

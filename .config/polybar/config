@@ -14,8 +14,8 @@ ternary-blue=#443BBF
 fg-left-primary=#9d59d2
 fg-left-accent=#fcf431
 
-bg-left-primary=transparent
-bg-left-accent=transparent
+bg-left-primary=#0000
+bg-left-accent=#0000
 system-bg-left=#282828
 
 
@@ -38,26 +38,33 @@ enable-ipc=true
 
 modules-left=i3 title
 modules-center=datetime
-modules-right=backlight pulseaudio battery text-tray-end scblank dunst
+modules-right=backlight pulseaudio battery scblank dunst
 
 border-top-size=5
-border-top-color=transparent
-border-bottom-color=transparent
+border-top-color=#0000
+border-bottom-color=#0000
 
 [module/i3]
 type=internal/i3
 
+# Patiently waiting for https://github.com/polybar/polybar/pull/2402
+# Then i can use multiple i3 modules to "group by output"
+output=
 label-mode=" %mode% "
 label-mode-padding=1
-label-mode-background=transparent
+label-mode-background=#0000
 label-mode-foreground=${colors.fg-left-primary}
 enable-click=true
 
 label-focused =" %index% "
 label-unfocused =" %index% "
+label-visible = " %index% "
 
 label-focused-foreground=${colors.fg-left-accent}
 label-unfocused-foreground=${colors.fg-left-primary}
+
+# label-separator = |
+# label-separator-foreground = #ff0000
 
 # ws-icon-0="10:discord;0:ﭮ "
 # ws-icon-1="1;1"

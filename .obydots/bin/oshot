@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+notify-send -h string:synchronous:true -u normal -a "oshot" "Recording screenshot" "Select the Area"
 scrot -s -e 'xclip -selection clipboard -t image/png -i $f; rm "$f"' '/tmp/scrot-tmp.png'
+notify-send -h string:synchronous:true -u low -a "oshot" "Recording screenshot" "Copied to clipboard"
