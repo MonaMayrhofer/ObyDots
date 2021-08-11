@@ -2,6 +2,14 @@
 " init.vim loads lua/init.lua and then does quick and dirty hacks.
 lua require('init')
 
+
+" Integrate editorconfig plugins someday...
+set tabstop=4
+set shiftwidth=4
+
+
+
+set guifont=JetBrainsMono:h12
 " I do not want to pile things here. Move them to lua files as soon as possible.
 
 let s:tern = {}

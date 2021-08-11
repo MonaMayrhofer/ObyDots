@@ -22,3 +22,8 @@ local cmd = vim.cmd
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 vim.cmd([[ au BufWrite *.rs :Format ]])
 vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
+
+
+-- Hop.nvim
+map('n', '<C-l>', ':HopWord<Cr>')
+map('i', '<C-l>', '<C-o>:HopWord<Cr>')
