@@ -46,6 +46,11 @@ if [[ -e "$HOME/.zshrc_local" ]]; then
 fi
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='
+	--color fg:15,hl:3,bg+:234,hl+:5,gutter:0,prompt:5,info:4
+	--color border:5,spinner:3
+	--preview="bat --color=always -u --style=numbers {}"
+'
 
 #Enable ZSH History
 export HISTFILE=~/.local/share/zsh/zsh_history
