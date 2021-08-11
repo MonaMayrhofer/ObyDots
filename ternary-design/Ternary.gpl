@@ -2,30 +2,31 @@ GIMP Palette
 Name: Ternary
 Columns: 12
 #
-240  84  79	Red
-160 199  92	Green
-252 244  49	Yellow
-  0 121 145	Blue
-157  89 210	Violet
- 67 154 134	Aqua
-206 137 100	Orange
-147 181 198	Blue_Alt
-221  36  30	Red_Dim
-127 163  63	Green_Dim
-221 214  14	Yellow_Dim
-  6  89 106	Blue_Dim
-125  58 177	Violet_Dim
- 56 115 101	Aqua_Dim
-175 103  63	Orange_Dim
-106 150 171	Creme_Dim
 237 126 122	Red_Light
+240  84  79	Red
+221  36  30	Red_Dim
 178 206 129	Green_Light
+160 199  92	Green
+127 163  63	Green_Dim
 245 240  98	Yellow_Light
- 11 173 205	Violet_Light
-177 129 214	Purple_Light
+252 244  49	Yellow
+221 214  14	Yellow_Dim
+ 11 173 205	Blue_Light
+  0 121 145	Blue
+  6  89 106	Blue_Dim
+177 129 214	Violet_Light
+157  89 210	Violet
+125  58 177	Violet_Dim
  98 179 160	Aqua_Light
+ 67 154 134	Aqua
+ 56 115 101	Aqua_Dim
 212 162 135	Orange_Light
-171 196 208	Creme_Light
+206 137 100	Orange
+175 103  63	Orange_Dim
+171 196 208	Blue_Alt_Light
+147 181 198	Blue_Alt
+106 150 171	Blue_Alt_Dim
+
  24  24  24	darkest
  40  40  40	dark0
  50  49  47	dark1

@@ -31,14 +31,14 @@
      units="px"
      width="1920px"
      inkscape:zoom="0.54885189"
-     inkscape:cx="1064.9503"
-     inkscape:cy="484.64806"
+     inkscape:cx="880.92983"
+     inkscape:cy="225.92616"
      inkscape:window-width="1888"
-     inkscape:window-height="1023"
-     inkscape:window-x="14"
-     inkscape:window-y="39"
+     inkscape:window-height="575"
+     inkscape:window-x="1934"
+     inkscape:window-y="607"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      inkscape:snap-midpoints="false"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-text-baseline="false"
@@ -263,8 +263,7 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     sodipodi:insensitive="true">
+     id="layer1">
     <rect
        style="fill:#f0544f;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect958"
@@ -378,20 +377,6 @@
        x="396.875"
        y="79.375" />
     <rect
-       style="fill:#f9f5f0;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
-       id="rect1709"
-       width="26.458332"
-       height="26.458332"
-       x="449.79166"
-       y="52.916668" />
-    <rect
-       style="fill:#d9bfa5;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
-       id="rect1711"
-       width="26.458332"
-       height="26.458332"
-       x="449.79166"
-       y="79.375" />
-    <rect
        style="fill:#ed7e7a;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
        id="rect2031"
        width="26.458332"
@@ -446,13 +431,6 @@
        width="26.458332"
        height="26.458332"
        x="396.875"
-       y="26.458332" />
-    <rect
-       style="fill:#faf7f4;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
-       id="rect2047"
-       width="26.458332"
-       height="26.458332"
-       x="449.79166"
        y="26.458332" />
     <rect
        style="fill:#282828;stroke:#000000;stroke-width:0.264999;stroke-opacity:1"
@@ -582,7 +560,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Text"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.63854946,9.2196421)"
@@ -592,7 +571,7 @@
        y="0"><tspan
          x="4.0001228"
          y="224.75413"
-         id="tspan21724">Normal</tspan></text>
+         id="tspan1152">Normal</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.57504877,35.836726)"
@@ -602,7 +581,7 @@
        y="0"><tspan
          x="52.000061"
          y="224.75413"
-         id="tspan21726">Dim</tspan></text>
+         id="tspan1154">Dim</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.44804922,-17.662026)"
@@ -612,7 +591,7 @@
        y="0"><tspan
          x="4.0001228"
          y="224.75413"
-         id="tspan21728">Bright</tspan></text>
+         id="tspan1156">Bright</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-3.0480247,88.594643)"
@@ -622,7 +601,7 @@
        y="0"><tspan
          x="36.000082"
          y="224.75413"
-         id="tspan21730">Dark</tspan></text>
+         id="tspan1158">Dark</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:1.25;font-family:'JetBrainsMonoMedium NF';-inkscape-font-specification:'JetBrainsMonoMedium NF, Normal';stroke-width:0.264583"
@@ -643,7 +622,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21732">0</tspan></text>
+         id="tspan1160">0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,68.163717,88.594644)"
@@ -653,7 +632,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21734">1</tspan></text>
+         id="tspan1162">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,94.756106,88.629922)"
@@ -663,7 +642,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21736">2</tspan></text>
+         id="tspan1164">2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,121.20033,88.559366)"
@@ -673,7 +652,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21738">3</tspan></text>
+         id="tspan1166">3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,147.69394,88.594644)"
@@ -683,7 +662,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21740">4</tspan></text>
+         id="tspan1168">4</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,68.283661,115.0177)"
@@ -693,7 +672,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21742">3</tspan></text>
+         id="tspan1170">3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,94.756106,115.08826)"
@@ -703,7 +682,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21744">2</tspan></text>
+         id="tspan1172">2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,121.08038,115.05298)"
@@ -713,7 +692,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21746">1</tspan></text>
+         id="tspan1174">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,147.6375,115.05298)"
@@ -723,7 +702,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21748">0</tspan></text>
+         id="tspan1176">0</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,41.860605,115.05298)"
@@ -733,7 +712,7 @@
        y="0"><tspan
          x="84.00002"
          y="224.75413"
-         id="tspan21750">4</tspan></text>
+         id="tspan1178">4</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:5.99722px;line-height:1.25;font-family:'JetBrainsMonoMedium NF';-inkscape-font-specification:'JetBrainsMonoMedium NF, Normal';fill:#282828;stroke-width:0.264583"
