@@ -1,4 +1,5 @@
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -111,6 +112,16 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
+
+# move workspace to monitor
+bindsym $mod+$alt+l move workspace to output right
+bindsym $mod+$alt+h move workspace to output left
+bindsym $mod+$alt+1 exec --no-startup-id i3-ws-to-monitor 1
+bindsym $mod+$alt+2 exec --no-startup-id i3-ws-to-monitor 2
+bindsym $mod+$alt+3 exec --no-startup-id i3-ws-to-monitor 3
+bindsym $mod+$alt+4 exec --no-startup-id i3-ws-to-monitor 4
+bindsym $mod+$alt+5 exec --no-startup-id i3-ws-to-monitor 5
+bindsym $mod+$alt+6 exec --no-startup-id i3-ws-to-monitor 6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
