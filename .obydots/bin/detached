@@ -1,0 +1,26 @@
+#!/usr/bin/env zsh
+
+
+if [[ $# -lt 1 ]]; then
+	echo "Usage: $0 [COMMAND]"
+	exit 1
+fi
+
+while [[ $# -gt 1 ]]; do
+	case $1 in
+		"--help"|"-h")
+			echo "Help not implemented yet :)."
+			;;
+	esac
+	shift
+done
+
+COMMAND=$1
+
+
+if [[ $COMMAND = "" ]]; then
+	echo "Ended up with invalid command: '$COMMAND'"
+	exit 1
+fi
+
+nohup "$COMMAND" & disown
