@@ -20,6 +20,15 @@ while [[ $# -gt 0 ]]; do
 		"--interactive"|"-i")
 			SELECT_DISPLAY="true"
 			;;
+		"--loop"|"-l")
+			echo "Looping through displays is not yet implemented :)"
+			#TODO: Loop through connected displays to map to.
+			#1) Get display the devices are currently mapped to (probably through a helper file, like zen-mode)
+			#2) Get All available displays
+			#3) Advance by one, looping
+			#4) Set stuff.
+			#5) Dunsitfy the user
+			;;
 	esac
 	shift
 done
