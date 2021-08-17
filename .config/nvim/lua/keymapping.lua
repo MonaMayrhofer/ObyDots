@@ -9,6 +9,7 @@ map('n', '<S-p>', ':Buffers<Cr>')
 map('n', '<M-p>', ':Commands<Cr>')
 map('n', '<C-p>', ':Files<Cr>')
 map('n', '<C-f>', ':Rg<Cr>')
+map('n', '<C-y>', ':NvimTreeToggle<Cr>')
 
 -- Clear search
 map('n', '<C-h>', ':nohlsearch<Cr>')

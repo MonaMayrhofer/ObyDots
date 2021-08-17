@@ -1,0 +1,44 @@
+#!/bin/bash -x
+
+MAP_DISPLAY="HEAD-1"
+SELECT_DISPLAY="false"
+
+obydots-require-executable sd "https://github.com/chmln/sd"
+
+#source $(obydots-profile-file wacom-interface.sh)
+
+while [[ $# -gt 0 ]]; do
+	case $1 in 
+		"--help"|"-h")
+			echo "Help not yet implemented..."
+			exit 1
+			;;
+		"--display"|"-d")
+			shift
+			MAP_DISPLAY=$1
+			;;
+		"--interactive"|"-i")
+			SELECT_DISPLAY="true"
+			;;
+	esac
+	shift
+done
+
+
+DEVICES=$(xsetwacom --list devices | sed 's/id.*$//')
+
+
+if [[ "$SELECT_DISPLAY" = "true" ]]; then
+	DISPLAYS=$(xrandr | grep ' connected ' | sd "^(.+) connected (\w* )*((\d+)x(\d+)\+(\d+)\+(\d+)) .*$" ' --action=$3,$1')
+	MAP_DISPLAY=$(dunstify -h string:synchronous:true -a "Wacom" ${DISPLAYS} "Display to map wacom to")
+	dunstify -u low -h string:synchronous:true -a "Wacom" "Selected ${MAP_DISPLAY}"
+fi
+echo $TARGET_DISPLAY
+
+echo $DISPLAYS
+
+while read device ; do
+	echo "Device: $device"
+	xsetwacom --set "${device}" MapToOutput "$MAP_DISPLAY"
+	dunstify -u low -a "Wacom" "Mapped ${device} to ${MAP_DISPLAY}"
+done <<< "$DEVICES"

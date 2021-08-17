@@ -84,6 +84,9 @@ nvim_lsp["rust_analyzer"].setup {
 	}
 }
 
+local lspconfig = require'lspconfig'
+lspconfig.ccls.setup {}
+
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
