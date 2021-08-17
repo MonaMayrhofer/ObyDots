@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
 
-journalctl -u battery-monitor.service | awk '{OFS="\t"} /power-graph/{print $6,$7}'
+SINCE="2 days ago"
+
+while [[ $# -gt 1 ]]; do
+	
+	case $1 in
+		"--help"|"-h") 
+			echo "Help not implemented."
+			exit 1
+			;;
+		"--since"|"-s")
+			shift
+			SINCE=$1
+			;;
+	esac
+	
+	shift
+done
+
+journalctl --since "${SINCE}" -u battery-monitor.service | awk '{OFS="\t"} /power-graph/{print $6,$7}'
