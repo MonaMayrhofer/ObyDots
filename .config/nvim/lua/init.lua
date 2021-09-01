@@ -51,6 +51,13 @@ require('.compesettings')
 require('.keymapping')
 
 
+
+-- NVIM Tree
+vim.g.nvim_tree_follow = 1
+vim.g.nvim_tree_highlight_opened_files = 0
+vim.g.nvim_tree_lsp_diagnostics = 1
+vim.g.nvim_tree_git_hl = 0 --Cuz I got icons
+
 --- MarkdownPreview
 vim.g.mkdp_browser = 'firefox'
 

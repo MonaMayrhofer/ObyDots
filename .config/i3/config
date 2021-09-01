@@ -172,6 +172,9 @@ exec --no-startup-id pasystray
         # status_command i3status
 	# i3bar_command $HOME/.config/polybar/launch.sh
 # }
+
+
+
 # Looks
 default_border pixel
 

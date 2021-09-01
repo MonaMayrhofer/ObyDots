@@ -23,6 +23,11 @@ local cmd = vim.cmd
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 vim.cmd([[ au BufWritePre *.rs :Format ]])
 vim.cmd([[ au BufWritePre *.js :Format ]])
+vim.cmd([[ au BufWrite *.svelte :Format ]])
+vim.cmd([[ au BufWritePre *.html :Format ]])
+vim.cmd([[ au BufWritePre *.ts :Format ]])
+vim.cmd([[ au BufWrite *.tsx :Format ]])
+vim.cmd([[ au BufWritePre *.css :Format ]])
 vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
 
 
