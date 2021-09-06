@@ -25,6 +25,14 @@ while [[ $# -gt 1 ]]; do
 done
 
 FILE="$HOME/.obydots/profiles/$(cat /etc/hostname)/$1"
+DEFAULT_FILE="$HOME/.obydots/profiles/default/$1"
+
+
+if [[ ! -e "$FILE" ]]; then
+	if [[ -e "$DEFAULT_FILE" ]]; then
+		FILE="$DEFAULT_FILE"
+	fi
+fi
 
 if [[ "$DO_ERROR" = "true" ]]; then
 	if [[ ! -e "$FILE" ]]; then
