@@ -28,6 +28,7 @@ vim.cmd([[ au BufWritePre *.html :Format ]])
 vim.cmd([[ au BufWritePre *.ts :Format ]])
 vim.cmd([[ au BufWrite *.tsx :Format ]])
 vim.cmd([[ au BufWritePre *.css :Format ]])
+vim.cmd([[ au BufNew,BufNewFile,BufRead *.psql setlocal ft=sql ]])
 vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
 
 

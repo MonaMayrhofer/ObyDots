@@ -47,3 +47,4 @@ fi
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export TERMINAL=kitty
 export EDITOR=/usr/bin/nvim
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"

@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+
+#man rofi-script
+
+print_option() {
+	local KEY=$1
+	local DISPLAY=$2
+	local VALUE=$3
+	local DISPLAY_ON=$4
+	local DISPLAY_OFF=$5
+
+	local DISPLAY_VALUE="UNKNOWN"
+	if [[ "$VALUE" = "true" ]]; then
+		local DISPLAY_VALUE=$DISPLAY_ON
+	elif [[ "$VALUE" = "false" ]]; then
+		local DISPLAY_VALUE=$DISPLAY_OFF
+	fi
+
+	echo -en "${DISPLAY} [${DISPLAY_VALUE}] \0info\x1f${KEY}\n"
+}
+
+screensaver_on() {
+	local status=$(xset q | sed -n "s/^.*timeout: *\([0-9]\+\).*$/\1/p")
+
+	if [[ "$status" -eq 0 ]]; then
+		echo "false"
+	else
+		echo "true"
+	fi
+}
+
+screensaver_toggle() {
+	if [[ "$(screensaver_on)" = "true" ]]; then
+		xset s off
+		xset s noblank
+		xset -dpms
+	else
+		xset s on
+		xset +dpms
+	fi
+}
+
+if [[ $# -eq 1 ]]; then
+	# Show all Files
+	case $ROFI_INFO in
+		"dunst")
+			dunstctl set-paused toggle
+			;;
+		"screensaver")
+			screensaver_toggle
+			;;
+		"exit")
+			exit 0
+			;;
+	esac
+fi
+
+
+echo -en "Exit \0info\x1fexit\n"
+print_option dunst Dunst $(dunstctl is-paused)    
+print_option screensaver Screensaver $(screensaver_on) 祥 精
+
