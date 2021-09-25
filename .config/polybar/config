@@ -188,7 +188,7 @@ bar-capacity-indicator = "ﯜ "
 type = custom/script
 format-padding=1
 exec=pb-screenblank
-tail = true
+tail=true
 click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 
 [module/dunst]

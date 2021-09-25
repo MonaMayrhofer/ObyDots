@@ -1,9 +1,11 @@
 touchpad-off() {
 	xinput disable $1
+	notify-send -h string:synchronous:true -u low -a "Touchpad" "disabled"
 }
 
 touchpad-on() {
 	xinput enable $1
+	notify-send -h string:synchronous:true -u low -a "Touchpad" "enabled"
 }
 
 touchpad-toggle() {
