@@ -1,0 +1,10 @@
+#!/bin/bash
+
+EXECUTABLE=$1
+
+if which "$EXECUTABLE"; then
+	echo "Found" > /dev/null
+else
+	echo "Not Found"
+	dunstify -u critical -a "Obydots" "Obydots requires '$EXECUTABLE' to be present in path."
+fi

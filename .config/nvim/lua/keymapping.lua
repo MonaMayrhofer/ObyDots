@@ -9,6 +9,7 @@ map('n', '<S-p>', ':Buffers<Cr>')
 map('n', '<M-p>', ':Commands<Cr>')
 map('n', '<C-p>', ':Files<Cr>')
 map('n', '<C-f>', ':Rg<Cr>')
+map('n', '<C-y>', ':NvimTreeToggle<Cr>')
 
 -- Clear search
 map('n', '<C-h>', ':nohlsearch<Cr>')
@@ -22,6 +23,12 @@ local cmd = vim.cmd
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 vim.cmd([[ au BufWritePre *.rs :Format ]])
 vim.cmd([[ au BufWritePre *.js :Format ]])
+vim.cmd([[ au BufWrite *.svelte :Format ]])
+vim.cmd([[ au BufWritePre *.html :Format ]])
+vim.cmd([[ au BufWritePre *.ts :Format ]])
+vim.cmd([[ au BufWrite *.tsx :Format ]])
+vim.cmd([[ au BufWritePre *.css :Format ]])
+vim.cmd([[ au BufNew,BufNewFile,BufRead *.psql setlocal ft=sql ]])
 vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
 
 

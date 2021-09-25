@@ -142,6 +142,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec "rofi -show power-menu -modi power-menu:rofi-power-menu -lines 6 -width 20"
+bindsym $mod+z exec "rofi -show zoxide -modi zoxide:rofi-zoxide"
+bindsym $mod+s exec "rofi -show settings -modi settings:rofi-settings"
  
 
 # resize window (you can also use the mouse for that)
@@ -172,6 +174,9 @@ exec --no-startup-id pasystray
         # status_command i3status
 	# i3bar_command $HOME/.config/polybar/launch.sh
 # }
+
+
+
 # Looks
 default_border pixel
 
@@ -217,4 +222,6 @@ client.background       #ffffff
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i ~/obydots/ternary-design/background.png -k --inside-color=9d59d2 --ring-color=f9f5f0 --insidever-color=9d59d2 --ringver-color=7d3ab1 --insidewrong-color=9d59d2 --ringwrong-color=ed7e7a --line-color=7d3ab1 --keyhl-color=7d3ab1 --bshl-color=ddd60e --greeter-color=ffffff --layout-color=f9f5f0 --time-color=f9f5f0 --date-color=f9f5f0 --verif-color=f9f5f0 --wrong-color=f9f5f0 --modif-color=f9f5f0 --verif-text="" --wrong-text="" --time-font="JetBrainsMono NF" --date-font="JetBrainsMono NF" --timeoutline-width=20
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i ~/obydots/ternary-design/background_nb.png -k --inside-color=9d59d2 --ring-color=f9f5f0 --insidever-color=9d59d2 --ringver-color=7d3ab1 --insidewrong-color=9d59d2 --ringwrong-color=ed7e7a --line-color=7d3ab1 --keyhl-color=7d3ab1 --bshl-color=ddd60e --greeter-color=ffffff --layout-color=f9f5f0 --time-color=f9f5f0 --date-color=f9f5f0 --verif-color=f9f5f0 --wrong-color=f9f5f0 --modif-color=f9f5f0 --verif-text="" --wrong-text="" --time-font="JetBrainsMono NF" --date-font="JetBrainsMono NF" --timeoutline-width=20
+exec --no-startup-id xss-lock --transfer-sleep-lock -- obydots-lock
+
