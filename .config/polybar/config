@@ -38,7 +38,7 @@ enable-ipc=true
 
 modules-left=i3 title
 modules-center=datetime
-modules-right=backlight pulseaudio battery scblank dunst
+modules-right=backlight pulseaudio battery
 
 border-top-size=5
 border-top-color=#0000
@@ -183,17 +183,3 @@ bar-capacity-width = 6
 bar-capacity-empty = " "
 bar-capacity-fill = " "
 bar-capacity-indicator = "ﯜ "
-
-[module/scblank]
-type = custom/script
-format-padding=1
-exec=pb-screenblank
-tail=true
-click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-
-[module/dunst]
-type = custom/ipc
-initial = 1
-format-padding=1
-hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:} %{A}" &
-hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:} %{A}" &

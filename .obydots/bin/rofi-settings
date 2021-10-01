@@ -41,6 +41,23 @@ screensaver_toggle() {
 	fi
 }
 
+wifi_on() {
+	local status=$(nmcli radio wifi)
+	if [[ "$status" = "enabled" ]]; then
+		echo "true"
+	else
+		echo "false"
+	fi
+}
+
+wifi_toggle() {
+	if [[ "$(wifi_on)" = "true" ]]; then
+		nmcli radio wifi off
+	else
+		nmcli radio wifi on
+	fi
+}
+
 if [[ $# -eq 1 ]]; then
 	# Show all Files
 	case $ROFI_INFO in
@@ -50,6 +67,9 @@ if [[ $# -eq 1 ]]; then
 		"screensaver")
 			screensaver_toggle
 			;;
+		"wifi")
+			wifi_toggle
+			;;
 		"exit")
 			exit 0
 			;;
@@ -58,6 +78,7 @@ fi
 
 
 echo -en "Exit \0info\x1fexit\n"
-print_option dunst Dunst $(dunstctl is-paused)    
+print_option dunst Dunst $(dunstctl is-paused)     
 print_option screensaver Screensaver $(screensaver_on) 祥 精
+print_option wifi Wifi $(wifi_on) on off
 
