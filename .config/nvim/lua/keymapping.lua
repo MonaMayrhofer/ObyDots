@@ -35,3 +35,9 @@ vim.cmd([[:command ToggleRelativeLineNumbers :set rnu!]])
 -- Hop.nvim
 map('n', '<C-l>', ':HopWord<Cr>')
 map('i', '<C-l>', '<C-o>:HopWord<Cr>')
+
+-- Limelight and Goyo
+vim.cmd([[ au User GoyoEnter Limelight ]])
+vim.cmd([[ au User GoyoLeave Limelight! ]])
+
+
