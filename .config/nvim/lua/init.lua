@@ -35,6 +35,12 @@ paq {'iamcco/markdown-preview.nvim', run ="cd app && npm install"}
 paq {'tpope/vim-fugitive'} --Replace with https://github.com/TimUntersberger/neogit
 paq {'airblade/vim-gitgutter'}
 
+-- Writing
+paq { 'rhysd/vim-grammarous' }
+
+paq { 'junegunn/goyo.vim' }
+paq { 'junegunn/limelight.vim' }
+
 -----------------------------------------------------------
 -- TODO: hop.nvim Shortcuts
 --
@@ -53,10 +59,13 @@ require('.keymapping')
 
 
 -- NVIM Tree
-vim.g.nvim_tree_follow = 1
+-- vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_highlight_opened_files = 0
-vim.g.nvim_tree_lsp_diagnostics = 1
 vim.g.nvim_tree_git_hl = 0 --Cuz I got icons
+require('nvim-tree').setup{
+	lsp_diagnostics = 1,
+	tree_follow= 1
+}
 
 --- MarkdownPreview
 vim.g.mkdp_browser = 'firefox'

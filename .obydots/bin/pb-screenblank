@@ -10,9 +10,9 @@ updateTo() {
 toggle() {
     updateTo
     if [[ to -eq "0" ]]; then
-	xset s on && notify-send -u low "Screen-Saver" "Screen saver is now enabled"
+		xset s on && notify-send -h string:synchronous:true -u low -t 500 -a "Screen Saver" "enabled"
     else
-	xset s off && notify-send -u low "Screen-Saver" "Screen saver is now disabled"
+		xset s off && notify-send -h string:synchronous:true -u low -t 500 -a "Screen Saver" "disabled"
     fi
     if [ "$sleep_pid" -ne 0 ]; then
         kill $sleep_pid >/dev/null 2>&1
@@ -31,6 +31,6 @@ while true; do
 	# Screensaver: On
 	echo ""
     fi
-    sleep 600 & sleep_pid=$!
+    sleep 6000 & sleep_pid=$!
     wait
 done
