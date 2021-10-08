@@ -11,11 +11,15 @@ while [[ $# -gt 1 ]]; do
 		"--help"|"-h")
 			echo "Help not implemented yet :)."
 			;;
+		"--")
+			shift
+			break
+			;;
 	esac
 	shift
 done
 
-COMMAND=$1
+COMMAND=$@
 
 
 if [[ $COMMAND = "" ]]; then
@@ -23,4 +27,5 @@ if [[ $COMMAND = "" ]]; then
 	exit 1
 fi
 
-nohup "$COMMAND" & disown
+echo "nohup: $COMMAND"
+nohup $COMMAND > /dev/null & disown
