@@ -58,6 +58,6 @@ fi
 
 
 echo -en "Exit \0info\x1fexit\n"
-print_option dunst Dunst $(dunstctl is-paused)    
+print_option dunst Dunst $(dunstctl is-paused)    
 print_option screensaver Screensaver $(screensaver_on) 祥 精
 
