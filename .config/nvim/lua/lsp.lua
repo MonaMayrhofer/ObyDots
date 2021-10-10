@@ -64,7 +64,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "bashls", "tsserver", "gdscript", "hls", "angularls", "texlab" }
+local servers = { "pyright", "bashls", "tsserver", "gdscript", "hls", "angularls", "ccls", "texlab"  }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -90,10 +90,6 @@ nvim_lsp["svelte"].setup {
 	}
 }
 
-local lspconfig = require'lspconfig'
-lspconfig.ccls.setup {}
-
--- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = true,

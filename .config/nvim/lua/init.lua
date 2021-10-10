@@ -43,7 +43,6 @@ paq { 'junegunn/limelight.vim' }
 
 -----------------------------------------------------------
 -- TODO: hop.nvim Shortcuts
---
 g['deoplete#enable_at_startup'] = 1  -- enable deoplete at startup
 
 --- SETUP THESE PLUGINS YEE---
@@ -62,6 +61,7 @@ require('.keymapping')
 -- vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_highlight_opened_files = 0
 vim.g.nvim_tree_git_hl = 0 --Cuz I got icons
+
 require('nvim-tree').setup{
 	lsp_diagnostics = 1,
 	tree_follow= 1
