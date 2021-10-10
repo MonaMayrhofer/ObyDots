@@ -39,6 +39,7 @@ alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
 alias h="ghci"
+alias lv="lvim"
 
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
