@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "gruvbox"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -115,8 +115,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   }
 -- }
 
--- Additional Plugins
--- lvim.plugins = {
+-- Additional Plugin
+lvim.plugins = {
+  {"morhetz/gruvbox"},
+  {
+    "ggandor/lightspeed.nvim",
+    event = "BufRead",
+  }
+}
 --     {"folke/tokyonight.nvim"},
 --     {
 --       "folke/trouble.nvim",
