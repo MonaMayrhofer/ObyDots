@@ -11,14 +11,14 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "onedarker"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<A-p>"] = ":Telescope buffers<cr>"
-lvim.keys.normal_mode["<P>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
+lvim.keys.normal_mode["<S-p>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
 lvim.keys.normal_mode["<A-p>"] = ":Telescope find_files<cr>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
