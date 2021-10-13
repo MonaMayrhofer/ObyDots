@@ -18,8 +18,8 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<A-p>"] = ":Telescope buffers<cr>"
-lvim.keys.normal_mode["<A-p>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
-lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
+lvim.keys.normal_mode["<P>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
+lvim.keys.normal_mode["<A-p>"] = ":Telescope find_files<cr>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
