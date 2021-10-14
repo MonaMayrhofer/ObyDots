@@ -1,0 +1,12 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+gui:
+  theme:
+    lightTheme: false
+    selectedLineBgColor: 
+      - bold
+os:
+  editCommand: 'vim'
+  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
