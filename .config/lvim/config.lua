@@ -19,7 +19,7 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<A-p>"] = ":Telescope buffers<cr>"
 lvim.keys.normal_mode["<S-p>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
-lvim.keys.normal_mode["<A-p>"] = ":Telescope find_files<cr>"
+lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
@@ -121,7 +121,15 @@ lvim.plugins = {
   {
     "ggandor/lightspeed.nvim",
     event = "BufRead",
-  }
+  },
+  {
+     "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
+  },
 }
 --     {"folke/tokyonight.nvim"},
 --     {
