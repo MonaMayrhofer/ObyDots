@@ -6,6 +6,8 @@ if [[ $# -lt 1 ]]; then
 	exit 1
 fi
 
+OUTFILE="/dev/null"
+
 while [[ $# -gt 1 ]]; do
 	case $1 in
 		"--help"|"-h")
@@ -15,11 +17,20 @@ while [[ $# -gt 1 ]]; do
 			shift
 			break
 			;;
+		"-o"|"--stdout")
+			shift
+			OUTFILE=$1
+			;;
+		*)
+			break
+			;;
 	esac
 	shift
 done
 
-COMMAND=$@
+COMMAND=$(which $1)
+shift
+ARGS=$@
 
 
 if [[ $COMMAND = "" ]]; then
@@ -27,5 +38,6 @@ if [[ $COMMAND = "" ]]; then
 	exit 1
 fi
 
-echo "nohup: $COMMAND"
-nohup $COMMAND > /dev/null & disown
+echo "Running: '$COMMAND $ARGS'"
+echo "Redirecting stdout to: '$OUTFILE'"
+nohup $COMMAND $ARGS > ${OUTFILE} & disown
