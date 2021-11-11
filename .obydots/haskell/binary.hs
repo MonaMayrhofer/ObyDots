@@ -1,28 +1,26 @@
 import Data.Char
 
-tobins :: Integral a => a -> [Bool]
-tobins 0 = [False]
-tobins n = tobins (div n 2) ++ [1 == mod n 2]
-
 parsebool :: Char -> Bool
 parsebool '1' = True
 parsebool '0' = False
 parsebool _ = error "Not a vaid binary representation"
 
 frombinstr :: [Char] -> Int
-frombinstr = frombinkk . map parsebool
+frombinstr = frombin . map parsebool
 
-frombins :: [Bool] -> Int
-frombins [] = 0
-frombins (x : xs) = (if x then 1 else 0) * (2 ^ length xs) + frombins xs
+frombinsimple :: [Bool] -> Int
+frombinsimple = foldl (\acc x -> acc * 2 + (if x then 1 else 0)) 0
 
-frombinkk :: [Bool] -> Int
-frombinkk (sign : xs)
-  | sign = pred . negate . frombins $ map not xs
-  | otherwise = frombins xs
+tobinsimple :: Integral a => a -> [Bool]
+tobinsimple 0 = [False]
+tobinsimple n = tobinsimple (div n 2) ++ [1 == mod n 2]
 
-tobinkk :: (Integral a) => a -> [Bool]
-tobinkk n =
-  if n >= 0
-    then tobins n
-    else map not $ tobinkk $ negate n - 1
+frombin :: [Bool] -> Int
+frombin (sign : xs)
+  | sign = pred . negate . frombinsimple $ map not xs
+  | otherwise = frombinsimple xs
+
+tobin :: (Integral a) => a -> [Bool]
+tobin n
+  | n >= 0 = tobinsimple n
+  | otherwise = map not . tobin . pred . negate $ n
