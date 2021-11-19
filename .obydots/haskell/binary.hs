@@ -1,4 +1,5 @@
 import Data.Char
+import Data.Fixed
 
 parsebool :: Char -> Bool
 parsebool '1' = True
@@ -28,3 +29,27 @@ tobin :: (Integral a) => a -> [Bool]
 tobin n
   | n >= 0 = tobinsimple n
   | otherwise = map not . tobin . pred . negate $ n
+
+tobindec :: (RealFrac a) => a -> [DecBinary]
+tobindec n =
+  let fracs = mod' n 1
+      whole = n - fracs
+      wholebin = map toDecBinary . tobinsimple . floor $ whole
+      fracsbin = fractobin $ fracs * 2
+   in wholebin ++ [Dot] ++ fracsbin
+
+data DecBinary = One | Zero | Dot deriving (Show)
+
+fractobin :: (RealFrac a) => a -> [DecBinary]
+fractobin n
+  | n <= 0.000000000001 = []
+  | n >= 1 = One : fractobin (n - 1)
+  | otherwise = Zero : fractobin (n * 2)
+
+-- 0.75 = -> 0
+-- 1.5 = -> 1
+-- 0.5 = -> 0
+
+toDecBinary :: Bool -> DecBinary
+toDecBinary True = One
+toDecBinary False = Zero
