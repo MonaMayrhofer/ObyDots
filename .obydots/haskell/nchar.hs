@@ -17,10 +17,11 @@ class NCharString a where
 instance NCharString Char where
   conc [] bs = bs
   conc as [] = as
-  conc (as) (b : bs)
-      | null middle = conc (init as) bs
-      | otherwise   = init as ++ middle ++ bs
-    where middle = tryconcletters (last as) b
+  conc as (b : bs)
+    | null middle = conc (init as) bs
+    | otherwise = init as ++ middle ++ bs
+    where
+      middle = tryconcletters (last as) b
 
   pt = map Chr
   nt = map NChr
