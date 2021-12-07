@@ -41,6 +41,7 @@ alias cud="xclip-cutfile"
 alias h="ghci"
 alias lv="lvim"
 alias lg="lazygit"
+alias kd="kitty --detach"
 
 
 if [[ -e "$HOME/.zshrc_local" ]]; then

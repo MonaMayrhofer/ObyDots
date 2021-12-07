@@ -75,10 +75,8 @@ type=internal/i3
 # Then i can use multiple i3 modules to "group by output"
 # Nope.. too unpatient i just straight up compiled that fork myself :)
 output=DP-4
-label-mode=" %mode% "
-label-mode-padding=1
-label-mode-background=#0000
-label-mode-foreground=${colors.fg-left-primary}
+label-mode=""
+label-mode-padding=0
 enable-click=true
 
 label-focused =" %index% "

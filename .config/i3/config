@@ -147,6 +147,9 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+e exec "rofi -show power-menu -modi power-menu:rofi-power-menu -lines 6 -width 20"
 bindsym $mod+z exec "rofi -show zoxide -modi zoxide:rofi-zoxide"
 bindsym $mod+s exec "rofi -show settings -modi settings:rofi-settings"
+
+# Open Dunst Context Menu
+bindsym $mod+period exec "dunstctl context"
  
 
 # resize window (you can also use the mouse for that)
