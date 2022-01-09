@@ -40,6 +40,7 @@ alias baste="xclip-pastefile"
 alias cud="xclip-cutfile"
 alias h="ghci"
 alias lv="lvim"
+alias vi="lvim"
 alias lg="lazygit"
 alias kd="kitty --detach"
 

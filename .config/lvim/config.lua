@@ -117,6 +117,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugin
 lvim.plugins = {
+  { "mfussenegger/nvim-jdtls" },
   {"morhetz/gruvbox"},
   {
     "ggandor/lightspeed.nvim",

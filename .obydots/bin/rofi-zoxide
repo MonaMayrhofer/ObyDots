@@ -4,7 +4,6 @@ if [[ $# -eq 0 ]]; then
 	# Show all Files
 	zoxide query -l | head -n 1000
 else
-	nohup xdg-open $1 & disown
+  OUT=$(detached -- xdg-open $1)
 	exit 0
-	# Do something with the selection
 fi
