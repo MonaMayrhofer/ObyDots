@@ -33,6 +33,7 @@ create-link .obydots
 create-link-named thirdparty/zplug .zplug
 create-link-named thirdparty/asdf .asdf
 create-link-named .obydots/dracula/gtk .themes/dracula
+create-link-named xournalpptoolbar.ini .config/xournalpp/toolbar.ini
 
 for confdir in ${SCRIPTDIR}/.config/*
 do
