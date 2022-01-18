@@ -1,21 +1,21 @@
 # vi: ft=dosini
 
 [colors]
-fg-left-primary=#f8f8f2
-fg-left-accent=#ff79c6
+fg-primary=#f8f8f2
+fg-accent=#ff79c6
 
-bg-left-primary=#0000
-bg-left-accent=#0000
+bg-primary=#0000
+bg-accent=#0000
 
 
 [bar/top]
 bottom=false
 background=#0000
 
-foreground=${colors.fg-left-primary}
+foreground=${colors.fg-primary}
 locale=de_AT.UTF-8
 
-tray-foreground=${colors.fg-left-primary}
+tray-foreground=${colors.fg-primary}
 tray-background=#0000
 tray-position=right
 
@@ -47,15 +47,15 @@ output=DP-2
 label-mode=" %mode% "
 label-mode-padding=1
 label-mode-background=#0000
-label-mode-foreground=${colors.fg-left-primary}
+label-mode-foreground=${colors.fg-primary}
 enable-click=true
 
 label-focused =" %index% "
 label-unfocused =" %index% "
 label-visible = " %index% "
 
-label-focused-foreground=${colors.fg-left-accent}
-label-unfocused-foreground=${colors.fg-left-primary}
+label-focused-foreground=${colors.fg-accent}
+label-unfocused-foreground=${colors.fg-primary}
 
 [module/i3-DP4]
 type=internal/i3
@@ -72,8 +72,8 @@ label-focused =" %index% "
 label-unfocused =" %index% "
 label-visible = " %index% "
 
-label-focused-foreground=${colors.fg-left-accent}
-label-unfocused-foreground=${colors.fg-left-primary}
+label-focused-foreground=${colors.fg-accent}
+label-unfocused-foreground=${colors.fg-primary}
 
 [module/title]
 type = internal/xwindow
