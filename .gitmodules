@@ -22,6 +22,3 @@
 [submodule ".obydots/dracula/telegram"]
 	path = .obydots/dracula/telegram
 	url = git@github.com:dracula/telegram.git
-[submodule ".obydots/dracula/xournalpp"]
-	path = .obydots/dracula/xournalpp
-	url = git@github.com:dracula/xournalpp.git
