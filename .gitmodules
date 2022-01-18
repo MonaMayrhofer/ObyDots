@@ -13,3 +13,9 @@
 [submodule ".obydots/dracula/kitty"]
 	path = .obydots/dracula/kitty
 	url = git@github.com:dracula/kitty.git
+[submodule ".obydots/dracula/rofi"]
+	path = .obydots/dracula/rofi
+	url = git@github.com:dracula/rofi.git
+[submodule ".obydots/dracula/gtk"]
+	path = .obydots/dracula/gtk
+	url = git@github.com:dracula/gtk.git

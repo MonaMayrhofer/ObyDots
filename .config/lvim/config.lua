@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "dracula"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -147,7 +147,7 @@ vim.list_extend(lvim.lsp.override, { "java", "jdtls" })
 
 -- Additional Plugin
 lvim.plugins = {
-  {"morhetz/gruvbox"},
+  { "dracula/vim" },
   { "mfussenegger/nvim-jdtls" },
   {
     "ggandor/lightspeed.nvim",

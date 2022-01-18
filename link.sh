@@ -32,7 +32,7 @@ create-link-named .profile .zprofile
 create-link .obydots
 create-link-named thirdparty/zplug .zplug
 create-link-named thirdparty/asdf .asdf
-create-link-named ternary-design .obydots/ternary-design
+create-link-named .obydots/dracula/gtk .themes/dracula
 
 for confdir in ${SCRIPTDIR}/.config/*
 do
@@ -41,3 +41,7 @@ do
 done
 
 echo "userChrome.css (firefox theme) is not yet automatically linked. Please symlink it to ~/.mozilla/firefox/[DEFAULT-FOLDER]/chrome/userChrome.css. Where the DEFAULT-FOLDER is your current folder. Get its location at about:support in firefox."
+
+echo "GTK Settings:"
+gsettings set org.gnome.desktop.interface gtk-theme "dracula"
+gsettings set org.gnome.desktop.wm.preferences theme "dracula"
