@@ -19,3 +19,6 @@
 [submodule ".obydots/dracula/gtk"]
 	path = .obydots/dracula/gtk
 	url = git@github.com:dracula/gtk.git
+[submodule ".obydots/dracula/telegram"]
+	path = .obydots/dracula/telegram
+	url = git@github.com:dracula/telegram.git
