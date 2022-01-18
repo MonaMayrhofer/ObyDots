@@ -106,6 +106,10 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
+
+-- Replace null_ls by nvim-jdtls (Mona: Not quite sure what this does...)
+vim.list_extend(lvim.lsp.override, { "java", "jdtls" })
+
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 -- local formatters = require "lvim.lsp.null-ls.formatters"
 -- formatters.setup {
@@ -144,6 +148,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugin
 lvim.plugins = {
   {"morhetz/gruvbox"},
+  { "mfussenegger/nvim-jdtls" },
   {
     "ggandor/lightspeed.nvim",
     event = "BufRead",

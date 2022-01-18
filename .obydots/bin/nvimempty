@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+exec nvim -u "/home/obyoxar/.config/nvim-empty/init.vim" "$@"
