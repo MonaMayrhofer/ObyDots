@@ -10,3 +10,6 @@
 [submodule ".config/ranger/plugins/zoxide"]
 	path = .config/ranger/plugins/zoxide
 	url = git@github.com:jchook/ranger-zoxide.git
+[submodule ".obydots/dracula/kitty"]
+	path = .obydots/dracula/kitty
+	url = git@github.com:dracula/kitty.git
