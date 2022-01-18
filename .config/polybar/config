@@ -1,32 +1,21 @@
 # vi: ft=dosini
 
 [colors]
-# system-bg=#777765
-left-system-bg=#9D59D2
-right-system-bg=#fcf431
-ternary-bg=#282828
-ternary-bg-alt=#ff0000
-ternary-fg=#f9f5f0
-ternary-fg-alt=#00ff00
-ternary-orange=#9d59d2
-ternary-blue=#443BBF
-
-fg-left-primary=#9d59d2
-fg-left-accent=#fcf431
+fg-left-primary=#f8f8f2
+fg-left-accent=#ff79c6
 
 bg-left-primary=#0000
 bg-left-accent=#0000
-system-bg-left=#282828
 
 
 [bar/top]
 bottom=false
 background=#0000
 
-foreground=#eae1df
+foreground=${colors.fg-left-primary}
 locale=de_AT.UTF-8
 
-tray-foreground=#fff
+tray-foreground=${colors.fg-left-primary}
 tray-background=#0000
 tray-position=right
 
