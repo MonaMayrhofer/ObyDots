@@ -41,7 +41,7 @@ fi
 echo "Set zen to ${SET_TO}"
 
 
-IMAGE_ROOT="$HOME/obydots/ternary-design"
+IMAGE_ROOT="$HOME/.obydots/niodrac"
 
 source $(obydots-profile-file background-profiles.sh)
 
