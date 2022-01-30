@@ -1,5 +1,23 @@
 #!/usr/bin/env bash
 
+# TODO COMMAND PARSING
+set -x
+
+POST_PROCESS='xclip -selection clipboard -t image/png -i $f; rm "$f"'
+
+if [[ $1 == '--theme' ]]; then
+  echo "Draculaing"
+  CONVERT_COMMAND='convert $f 
+  -fuzz 10% 
+  -transparent white 
+  -channel RGB 
+  -negate 
+  $f'
+
+  POST_PROCESS="${CONVERT_COMMAND//$'\n'/$' '};${POST_PROCESS}"
+fi
+
+
 notify-send -h string:synchronous:true -u normal -a "oshot" "Recording screenshot" "Select the Area"
-scrot -s -e 'xclip -selection clipboard -t image/png -i $f; rm "$f"' '/tmp/scrot-tmp.png'
+scrot -s -e "${POST_PROCESS}" '/tmp/scrot-tmp.png'
 notify-send -h string:synchronous:true -u low -a "oshot" "Recording screenshot" "Copied to clipboard"

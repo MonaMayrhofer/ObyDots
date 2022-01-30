@@ -16,8 +16,7 @@ source ~/.obydots/lib/zsh-styles.zsh
 source /opt/asdf-vm/asdf.sh
 #\================/
 
-#/======= NNN =====\
-[[ -e ~/.config/nnn/obydots-nnn-config.sh ]] && source ~/.config/nnn/obydots-nnn-config.sh
+export VISUAL=lvim
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
