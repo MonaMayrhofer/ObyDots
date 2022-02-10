@@ -145,4 +145,9 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 
+
 @theme "dracula1"
+
+* {
+	font: "JetBrainsMono Nerd Font Mono Medium 12";
+}
