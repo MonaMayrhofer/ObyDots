@@ -1,5 +1,5 @@
 start-locker() {
-	i3lock --nofork -i ~/obydots/ternary-design/background-circle.png -k \
+	i3lock --nofork -i ~/.obydots/niodrac/background.png -k \
 		--inside-color=191919\
 		--ring-color=f9f5f0 \
 		--insidever-color=191919 \
