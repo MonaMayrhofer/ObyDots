@@ -33,6 +33,7 @@ alias gl="git log --graph --oneline --all --decorate"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias x="exa -l"
+alias xa="exa -la"
 
 alias coby="xclip-copyfile"
 alias baste="xclip-pastefile"
