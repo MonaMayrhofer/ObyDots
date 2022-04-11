@@ -85,6 +85,11 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+
+-- "Project.nvim is capable of automatically setting roots... Manually doable by :ProjectRoot"
+lvim.builtin.project.manual_mode = true
+-- lvim.builtin.project.detection_methods = {"gradle"}
+
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers

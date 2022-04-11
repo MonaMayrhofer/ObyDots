@@ -25,3 +25,6 @@
 [submodule ".obydots/dracula/godot"]
 	path = .obydots/dracula/godot
 	url = https://github.com/dracula/godot.git
+[submodule ".obydots/dracula/eclipse"]
+	path = .obydots/dracula/eclipse
+	url = https://github.com/dracula/eclipse.git
