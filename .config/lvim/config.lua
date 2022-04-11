@@ -20,6 +20,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<A-p>"] = ":Telescope buffers<cr>"
 lvim.keys.normal_mode["<S-p>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
 lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
+
+lvim.keys.normal_mode["gy"] = ":call GXBrowse(expand('<cWORD>'))<cr>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
@@ -60,7 +62,7 @@ lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -160,6 +162,10 @@ lvim.plugins = {
     config = function()
       vim.g.mkdp_auto_start = 1
     end,
+  },
+  {
+   "felipec/vim-sanegx",
+   event = "BufRead",
   },
 }
 

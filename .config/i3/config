@@ -102,10 +102,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10:discord"
 
-assign [class="discord"] workspace number $ws10
-#Temp stuff for bummydame
-assign [class=".*[^t].py$"] workspace number $ws10
-
 # switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -244,3 +240,11 @@ exec --no-startup-id udiskie -t
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="TelegramDesktop"] resize set width 100 px
 for_window [class="TelegramDesktop"] resize set height 100 px
+for_window [class="black-pixels-voxel-demo"] floating enable
+
+# Window specific stuff
+assign [class="discord"] workspace number $ws10
+#Temp stuff for bummydame
+assign [class=".*[^t].py$"] workspace number $ws10
+assign [class="voxelrust"] workspace number $ws5
+
