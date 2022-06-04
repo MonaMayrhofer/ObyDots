@@ -28,3 +28,6 @@
 [submodule ".obydots/dracula/eclipse"]
 	path = .obydots/dracula/eclipse
 	url = https://github.com/dracula/eclipse.git
+[submodule ".obydots/dracula/wallpaper"]
+	path = .obydots/dracula/wallpaper
+	url = git@github.com:dracula/wallpaper.git
