@@ -1,6 +1,3 @@
 #!/bin/sh
 
-
-export VIMRUNTIME="/home/obyoxar/nvim-code/"
-
-exec nvim -u "/home/obyoxar/.config/nvim-code/init.vim" "$@"
+exec nvim -u "/home/obyoxar/.config/nvim-code/nvcode/init.lua" "$@"

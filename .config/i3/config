@@ -75,7 +75,7 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+s move scratchpad
-bindsym $mod+m scratchpad show
+bindsym $mod+Shift+m scratchpad show
 
 
 # change focus between tiling / floating windows
@@ -248,3 +248,5 @@ assign [class="discord"] workspace number $ws10
 assign [class=".*[^t].py$"] workspace number $ws10
 assign [class="voxelrust"] workspace number $ws5
 
+for_window [class="further-down"] fullscreen enable
+assign [class="further-down"] workspace number $ws1
