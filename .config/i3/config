@@ -74,7 +74,7 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
-bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s move scratchpad
 bindsym $mod+Shift+m scratchpad show
 
 
@@ -145,7 +145,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec "rofi -show power-menu -modi power-menu:rofi-power-menu -lines 6 -width 20"
 bindsym $mod+z exec "rofi -show zoxide -modi zoxide:rofi-zoxide"
-bindsym $mod+s exec "rofi -show settings -modi settings:rofi-settings"
+bindsym $mod+Shift+s exec "rofi -show settings -modi settings:rofi-settings"
 bindsym $mod+Tab exec "rofi -show window"
 
 # Open Dunst Context Menu

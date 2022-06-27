@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# set -e
+set -x
+
+if [[ $# -ne "1" ]]; then
+    program_name=$(basename $0)
+    echo "Usage: '${program_name} [FILE]'"
+    exit 0
+fi
+
+open_file_name=$(readlink -f $1)
+open_file_dir=$(dirname ${open_file_name})
+root_dir=${open_file_dir}
+cd ${open_file_dir}
+git_dir=$(git rev-parse --show-toplevel 2> /dev/null)
+if [[ $? -eq "0" ]]; then
+	root_dir=${git_dir}
+	cd ${root_dir}
+fi
+echo "Root: ${root_dir}"
+server_name=$(basename ${root_dir})
+socket_file=$(kak -l | grep $server_name)
+
+shift
+
+if [[ $socket_file == "" ]]; then        
+    # Create new kakoune daemon for current dir
+    setsid kak -d -s $server_name &
+    sleep 0.2
+fi
+
+
+# and run kakoune (with any arguments passed to the script)
+kak -c $server_name ${open_file_name} $@

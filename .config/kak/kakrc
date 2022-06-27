@@ -1,0 +1,31 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
+plug "andreyorst/fzf.kak"
+plug "kak-lsp/kak-lsp" do %{
+        cargo install --locked --force --path .
+        mkdir -p ~/.config/kak-lsp
+        cp -n kak-lsp.toml ~/.config/kak-lsp/
+}
+
+# Only enable kak-lsp for windows where it's needed.
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+        lsp-enable-window
+        # Enable inlay hints
+        lsp-inlay-hints-enable window
+}
+set-face global InlayHints italic
+
+map global normal <c-p> ': fzf-mode<ret>v'
+
+
+def ide %{
+    rename-client main
+    set global jumpclient main
+
+    new rename-client tools
+    set global toolsclient tools
+
+    new rename-client docs
+    set global docsclient docs
+}
+
