@@ -31,3 +31,6 @@
 [submodule ".obydots/dracula/wallpaper"]
 	path = .obydots/dracula/wallpaper
 	url = git@github.com:dracula/wallpaper.git
+[submodule ".config/kak/plugins/plug.kak"]
+	path = .config/kak/plugins/plug.kak
+	url = https://github.com/andreyorst/plug.kak.git
