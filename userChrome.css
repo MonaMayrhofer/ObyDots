@@ -7,7 +7,6 @@ toolbox#navigator-toolbox {
 	top: 0;
 	left: 0;
 	right: 0;
-  background-color: #fff !important;
 	transform: translateY(-100%);
 	transition: 225ms transform cubic-bezier(0.4, 0.0, 0.2, 1), 100ms box-shadow;
 	transition-delay: 1s;
