@@ -8,8 +8,6 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
-vim.o.guifont = "JetBrainsMono Nerd Font:h10"
-
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
@@ -21,14 +19,6 @@ lvim.colorscheme = "dracula"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<A-p>"] = ":Telescope buffers<cr>"
-lvim.keys.normal_mode["<S-p>"] = ":lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>"
-lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
-
-lvim.keys.normal_mode["gy"] = ":call GXBrowse(expand('<cWORD>'))<cr>"
-
-lvim.keys.normal_mode["<C-.>"] = ":RustCodeAction<cr>"
-
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -91,10 +81,6 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
-
--- "Project.nvim is capable of automatically setting roots... Manually doable by :ProjectRoot"
-lvim.builtin.project.manual_mode = true
--- lvim.builtin.project.detection_methods = {"gradle"}
 
 -- generic LSP settings
 
@@ -171,40 +157,25 @@ lvim.builtin.project.manual_mode = true
 --   },
 -- }
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
-
--- Additional Plugin
-lvim.plugins = {
-  { "dracula/vim" },
-  {
-    "ggandor/lightspeed.nvim",
-    event = "BufRead",
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    ft = "markdown",
-    config = function()
-      vim.g.mkdp_auto_start = 1
-    end,
-  },
-  {
-    "felipec/vim-sanegx",
-    event = "BufRead",
-  },
-  {
-    "simrat39/rust-tools.nvim",
-    config = function()
-      require('user.rust-tools').config()
-    end,
-    ft = { "rust", "rs" },
-  },
-  {
-    "fladson/vim-kitty"
-  }
-}
+-- Additional Plugins
+-- lvim.plugins = {
+--     {"folke/tokyonight.nvim"},
+--     {
+--       "folke/trouble.nvim",
+--       cmd = "TroubleToggle",
+--     },
+-- }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = { "*.json", "*.jsonc" },
+--   -- enable wrap mode for json files only
+--   command = "setlocal wrap",
+-- })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "zsh",
+--   callback = function()
+--     -- let treesitter use bash highlight for zsh files as well
+--     require("nvim-treesitter.highlight").attach(0, "bash")
+--   end,
+-- })

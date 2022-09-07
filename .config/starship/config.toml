@@ -3,6 +3,9 @@ $all
 """
 
 [character]
-vicmd_symbol="[-<](bold yellow)"
-success_symbol="[->](bold yellow)"
-error_symbol="[->](bold red)"
+vicmd_symbol = "[-<](bold yellow)"
+success_symbol = "[->](bold yellow)"
+error_symbol = "[->](bold red)"
+
+[docker_context]
+disabled = true

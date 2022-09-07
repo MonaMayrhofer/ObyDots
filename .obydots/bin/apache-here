@@ -1,0 +1,131 @@
+#!/bin/bash
+
+IMAGE_NAME=apache-here
+APACHE_USER_ID=33
+APACHE_USER=www-data
+
+start-apache() {
+
+  # WEB_ROOT=$(dirname $(readlink -f $0))
+  WEB_ROOT=$(readlink -f $(pwd))
+
+  echo "Starting apache at ${WEB_ROOT}"
+  echo "==="
+  echo "If this is the first startup after a change to the image, the chowning of the mapped copy might take some minutes. You can inspect using strace..."
+  echo "==="
+
+  podman run --name=apache-here --rm \
+    --uidmap=0:1:20 \
+    --gidmap=0:1:20 \
+    --uidmap=${APACHE_USER_ID}:0:1 \
+    --gidmap=${APACHE_USER_ID}:0:1 \
+    --env APACHE_RUN_USER=${APACHE_USER} \
+    --env APACHE_RUN_GROUP=${APACHE_USER} \
+    --network=host \
+    -v ${WEB_ROOT}:/var/www/html \
+    -v ${WEB_ROOT}/.apache/apache2.conf:/etc/apache2/apache2.conf:ro \
+    -v ${WEB_ROOT}/.apache/php.ini:/usr/local/etc/php/conf.d/php.ini:ro \
+    -v ${WEB_ROOT}/.apache/sites-enabled:/etc/apache2/sites-enabled:ro \
+    localhost/${IMAGE_NAME}:latest
+    
+    # --uidmap=33:0:1 \
+    # --gidmap=33:0:1 \
+    # --gidmap=0:1:20 \
+
+    # --volume ${WEB_ROOT}/.apache:/etc/apache2/ \
+}
+
+
+handle-argument() {
+  case $1 in 
+    "--help")
+      echo "Usage $0 COMMAND"
+      echo " Commands: "
+      echo "    bash - Start a bash inside the running container"
+      echo "   setup - Rebuild the image"
+      echo "   start - Start an apache with the current directory as its /var/www/html"
+      echo "    init - Create default .apache folder within current directory"
+      echo " -- "
+      echo "The host user is mapped to ${APACHE_USER_ID} (files in the volumes will be 1033, so apache should run as 1033)"
+      echo "Mapped volumes:"
+      echo "  PWD -> /var/www/html"
+      echo "  PWD/.apache/apache2.conf"
+      echo "  PWD/.apache/php.ini"
+      echo "  PWD/.apache/sites-enabled"
+      exit 0;
+      ;;
+    *)
+      echo "Unknown Argument $1"
+      exit 1
+      ;;
+  esac
+}
+
+build-image() {
+  mkdir /tmp/apache-here-build
+  cat <<-EOF > /tmp/apache-here-build/Dockerfile
+    FROM docker.io/php:7.4.30-apache-bullseye
+    RUN apt-get update && apt-get install -y \
+      libfreetype6-dev \
+      libjpeg62-turbo-dev \
+      libpng-dev \
+      libzip-dev \
+      libicu-dev \
+      && docker-php-ext-configure gd --with-freetype --with-jpeg \
+      && docker-php-ext-configure intl \
+      && docker-php-ext-configure pdo_mysql \
+      && docker-php-ext-configure zip \
+      && docker-php-ext-install -j$(nproc) gd \
+      && docker-php-ext-install -j$(nproc) intl \
+      && docker-php-ext-install -j$(nproc) pdo_mysql \
+      && docker-php-ext-install -j$(nproc) zip \
+      && docker-php-source delete \
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/* \
+      && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+EOF
+  podman build -t ${IMAGE_NAME} /tmp/apache-here-build
+}
+
+start-bash() {
+  podman exec -it apache-here /bin/bash
+}
+
+handle-command() {
+  case $1 in
+    "setup")
+      echo "Building the image"
+      build-image
+      exit 0
+      ;;
+    "start")
+      echo "Starting apache"
+      start-apache
+      exit 0
+      ;;
+    "init")
+      echo "Initializing directory"
+      echo "Is not yet implemented... See the folders in dreamcasters PrestoShop for reference"
+      exit 0
+      ;;
+    "bash")
+      echo "Bashing into the container"
+      start-bash
+      exit 0
+      ;;
+    *)
+      echo "Unknown command $1"
+      exit 1
+      ;;
+  esac
+}
+
+while [[ $# -gt 0 ]]; do
+  if [[ $1 == --* ]]; then
+    handle-argument $1
+  else
+    handle-command $1
+    exit 0
+  fi
+  shift 
+done

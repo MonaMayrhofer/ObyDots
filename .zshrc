@@ -1,4 +1,4 @@
-fpath+=~/.zfunc
+
 
 source /etc/profile
 
@@ -44,7 +44,6 @@ alias vi="lvim"
 alias lg="lazygit"
 alias kd="kitty --detach"
 alias xo="xdg-open"
-
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
 	. $HOME/.zshrc_local
