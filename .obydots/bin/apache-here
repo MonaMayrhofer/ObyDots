@@ -71,24 +71,30 @@ build-image() {
       libpng-dev \
       libzip-dev \
       libicu-dev \
+      libcurl4-openssl-dev \
       && docker-php-ext-configure gd --with-freetype --with-jpeg \
       && docker-php-ext-configure intl \
       && docker-php-ext-configure pdo_mysql \
       && docker-php-ext-configure zip \
+      && docker-php-ext-configure curl \
       && docker-php-ext-install -j$(nproc) gd \
       && docker-php-ext-install -j$(nproc) intl \
       && docker-php-ext-install -j$(nproc) pdo_mysql \
       && docker-php-ext-install -j$(nproc) zip \
+      && docker-php-ext-install -j$(nproc) curl \
       && docker-php-source delete \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/* \
-      && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+      && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load \
+      && ln -s /etc/apache2/mods-available/ssl.load /etc/apache2/mods-enabled/ssl.load \
+      && ln -s /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/headers.load \
+      && ln -s /etc/apache2/mods-available/socache_shmcb.load /etc/apache2/mods-enabled/socache_shmcb.load
 EOF
   podman build -t ${IMAGE_NAME} /tmp/apache-here-build
 }
 
 start-bash() {
-  podman exec -it apache-here /bin/bash
+  podman exec -it ${IMAGE_NAME} /bin/bash
 }
 
 handle-command() {
