@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 bindsym --release $mod+space exec rofi -show drun
 # start ranger (a program launcher)
 bindsym --release $mod+numbersign exec kitty ranger
-bindsym --release $mod+plus exec kitty kalker
+bindsym --release $mod+F11 exec kitty kalker
 # start haskell ghci
 bindsym --release $mod+c exec kitty ghci
 # change focus
@@ -76,7 +76,7 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+s move scratchpad
-bindsym $mod+Shift+m scratchpad show
+bindsym $mod+F12 scratchpad show
 
 
 # change focus between tiling / floating windows
@@ -242,8 +242,13 @@ for_window [class="TelegramDesktop"] floating enable
 for_window [class="TelegramDesktop"] resize set width 100 px
 for_window [class="TelegramDesktop"] resize set height 100 px
 for_window [class="black-pixels-voxel-demo"] floating enable
+
+# Electron grr Fix
 # For some reason after an update visual studio insists on spawning with a title bar, which is annoying... Lets force it to comply
 for_window [class="Code"] border pixel
+# For some reason after an update discord insists on spawning with a title bar, which is annoying... Lets force it to comply
+for_window [class="discord"] border pixel
+for_window [title="Picture-in-Picture"] border pixel
 
 # Window specific stuff
 assign [class="discord"] workspace number $ws10

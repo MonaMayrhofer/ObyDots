@@ -11,7 +11,7 @@ M.config = function()
       executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
       reload_workspace_from_cargo_toml = true,
       on_initialized = function(status)
-        vim.notify("Rust-Analyzer was initialized '" .. status.health .. "'")
+        vim.notify("Rust-Tools was initialized '" .. status.health .. "'")
       end,
       inlay_hints = {
         auto = true,
