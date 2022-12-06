@@ -12,7 +12,7 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h10"
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save.enabled = true
 lvim.colorscheme = "dracula"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -44,20 +44,20 @@ lvim.keys.normal_mode["<C-m>"] = ":lua require('telescope.builtin').lsp_workspac
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 -- local _, actions = pcall(require, "telescope.actions")
-lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = "move_selection_next",
-    ["<C-k>"] = "move_selection_previous",
-    ["<C-n>"] = "cycle_history_next",
-    ["<C-p>"] = "cycle_history_prev",
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = "move_selection_next",
-    ["<C-k>"] = "move_selection_previous",
-  },
-}
+-- lvim.builtin.telescope.defaults.mappings = {
+-- -- for input mode
+-- i = {
+-- ["<C-j>"] = actions.move_selection_next,
+-- ["<C-k>"] = actions.move_selection_previous,
+-- ["<C-n>"] = actions.cycle_history_next,
+-- ["<C-p>"] = actions.cycle_history_prev,
+-- },
+-- for normal mode
+-- n = {
+-- ["<C-j>"] = actions.move_selection_next,
+-- ["<C-k>"] = action.move_selection_previous,
+-- },
+-- }
 
 
 -- Use which-key to add extra bindings with the leader-key prefix
@@ -76,7 +76,6 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -98,13 +97,13 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.highlight.enable = true
 
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 -- lvim.lsp.installer.setup.ensure_installed = {
---     "sumeko_lua",
+--     "sumneko_lua",
 --     "jsonls",
 -- }
 -- -- change UI setting of `LspInstallInfo`
@@ -174,8 +173,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     filetypes = { "javascript", "python" },
 --   },
 -- }
-
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 -- Additional Plugin
 lvim.plugins = {
