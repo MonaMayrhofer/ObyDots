@@ -44,7 +44,7 @@ alias vi="lvim"
 alias hx="helix"
 alias lg="lazygit"
 alias kd="kitty --detach"
-alias xo="xdg-open"
+alias xo="detached xdg-open"
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
 	. $HOME/.zshrc_local
