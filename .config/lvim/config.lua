@@ -6,7 +6,7 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+vim.filetype.add({ extension = { wgsl = "wgsl" } })
 
 vim.o.guifont = "JetBrainsMono Nerd Font:h10"
 
@@ -31,6 +31,7 @@ lvim.keys.normal_mode["<C-.>"] = ":RustCodeAction<cr>"
 lvim.keys.normal_mode["<M-L>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<M-H>"] = ":bprev<cr>"
 lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
+lvim.keys.normal_mode["<C-t>"] = ":Telescope lsp_dynamic_workspace_symbols<cr>"
 lvim.keys.normal_mode["<Tab>"] = ":lua require('telescope.builtin').buffers{sort_lastused=1}<cr>"
 lvim.keys.normal_mode["<C-m>"] = ":lua require('telescope.builtin').lsp_workspace_symbols{}<cr>"
 
@@ -183,7 +184,7 @@ lvim.plugins = {
   },
   {
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
+    build = "cd app && npm install",
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1
@@ -193,13 +194,13 @@ lvim.plugins = {
     "felipec/vim-sanegx",
     event = "BufRead",
   },
-  {
-    "simrat39/rust-tools.nvim",
-    config = function()
-      require('user.rust-tools').config()
-    end,
-    ft = { "rust", "rs" },
-  },
+  -- {
+  --   "simrat39/rust-tools.nvim",
+  --   config = function()
+  --     require('user.rust-tools').config()
+  --   end,
+  --   ft = { "rust", "rs" },
+  -- },
   {
     "fladson/vim-kitty"
   },
@@ -231,6 +232,26 @@ lvim.plugins = {
         post_hook = nil, -- Function to run after the scrolling animation ends
       })
     end
+  },
+  {
+    "ruifm/gitlinker.nvim",
+    event = "BufRead",
+    config = function()
+      require("gitlinker").setup {
+        opts = {
+          -- remote = 'github', -- force the use of a specific remote
+          -- adds current line nr in the url for normal mode
+          add_current_line_on_normal_mode = true,
+          -- callback for what to do with the url
+          action_callback = require("gitlinker.actions").open_in_browser,
+          -- print the url after performing the action
+          print_url = false,
+          -- mapping to call url generation
+          mappings = "<leader>gy",
+        },
+      }
+    end,
+    dependencies = "nvim-lua/plenary.nvim",
   },
 }
 
