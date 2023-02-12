@@ -194,13 +194,13 @@ lvim.plugins = {
     "felipec/vim-sanegx",
     event = "BufRead",
   },
-  -- {
-  --   "simrat39/rust-tools.nvim",
-  --   config = function()
-  --     require('user.rust-tools').config()
-  --   end,
-  --   ft = { "rust", "rs" },
-  -- },
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      require('user.rust-tools').config()
+    end,
+    ft = { "rust", "rs" },
+  },
   {
     "fladson/vim-kitty"
   },

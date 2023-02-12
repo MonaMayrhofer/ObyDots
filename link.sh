@@ -30,6 +30,8 @@ create-link .ghci
 create-link .profile
 create-link-named .profile .zprofile
 create-link .obydots
+create-link .spacemacs.d
+create-link .doom.d
 create-link-named thirdparty/zplug .zplug
 create-link-named thirdparty/asdf .asdf
 create-link-named .obydots/dracula/gtk .themes/dracula
